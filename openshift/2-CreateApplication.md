@@ -49,7 +49,7 @@ Your browser needs to be logged in to your GitHub account for a template to work
     * **Repository name**: Enter a name for your repo. GitHub will help with showing a green tick if it is valid (See warning above)
     * **Description**: Describe your app
 
-    Press **Create repository from template**
+4. Press **Create repository from template**
 
     ![Create Repository from Template](images/create-repo-from-template.png)
 
