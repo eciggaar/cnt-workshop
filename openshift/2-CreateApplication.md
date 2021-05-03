@@ -30,7 +30,7 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 ## Create your application in Github
 
 ---
-**Warning** :warning: &nbsp; Your browser needs to be logged in to your GitHub account for a template to work. If the link from the tile displays the GitHub 404 page, log in and reload the page.
+:warning: **Warning:** &nbsp; Your browser needs to be logged in to your GitHub account for a template to work. If the link from the tile displays the GitHub 404 page, log in and reload the page.
 
 ---
 
@@ -40,7 +40,7 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 
     ![Typescript Microservice](images/typescript-microservice.png)
 
-    Click on a Starter Kit **Tile** to create your app github repository from the template repository selected. You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
+    Click on a Starter Kit **Tile** to create your app github repository from the template repository selected.  You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
 
 3. Next, complete the GitHub create repository from template process.
 
