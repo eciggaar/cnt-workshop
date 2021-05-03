@@ -2,9 +2,8 @@
 
 ## Register your application in a DevOps Pipeline
 
-**Info**
-
-We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
+---
+**Info** :information: &nbsp; We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
 
 ---
 
@@ -43,9 +42,7 @@ Personal Access Token: Paste your GitHub personal access token
 9. After the pipeline has been created,the command will set up a webhook from the Git host to the pipeline event listener.
 
     ---
-    **Note**
-
-    If the webhook registration step fails, it is likely because the Git credentials are incorrect or do not have enough permission in the repository.
+    **Note** :pencil: &nbsp; If the webhook registration step fails, it is likely because the Git credentials are incorrect or do not have enough permission in the repository.
 
     ---
 
@@ -67,9 +64,9 @@ Personal Access Token: Paste your GitHub personal access token
 
 4. In the left menu, select *Pipelines*
 
-  You should see your application DevOps pipeline running. Once completed, the pipeline run will look like the image below.
+    You should see your application DevOps pipeline running. Once completed, the pipeline run will look like the image below.
 
-  ![Running pipeline](images/running-pipeline.png)
+    ![Running pipeline](images/running-pipeline.png)
 
 
 ## View your application artifacts
