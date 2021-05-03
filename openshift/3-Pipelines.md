@@ -14,15 +14,15 @@ We will be using the pipeline command of the IBM Garage Cloud cli to register th
 
 3. Start the process to create a pipeline.
 
-  ```bash
-  $ oc pipeline ${GIT_URL}
-  ```
+    ```bash
+    $ oc pipeline ${GIT_URL}
+    ```
 
-  For example:
+    For example:
 
-  ```bash
-  $ oc pipeline https://github.com/gct-showcase/inventory-svc
-  ```
+    ```bash
+    $ oc pipeline https://github.com/gct-showcase/inventory-svc
+    ```
 
 4. For the deployment of your first app with OpenShift select Tekton as the CI engine.
 
