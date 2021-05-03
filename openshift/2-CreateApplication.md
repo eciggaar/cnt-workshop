@@ -38,9 +38,9 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 
 2. Pick one of the templates that is a good architectural fit for your application and the language and framework that you prefer to work with. For your first application, select the **Typescript Microservice**. This also works well in the Cloud Shell and is perfect for this workshop.
 
-    Click on a Starter Kit **Tile** to create your app github repository from the template repository selected. 
+    ![Typescript Microservice](images/typescript-microservice.png)
 
-    You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
+    Click on a Starter Kit **Tile** to create your app github repository from the template repository selected. You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
 
 3. Next, complete the GitHub create repository from template process.
 
