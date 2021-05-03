@@ -2,7 +2,6 @@
 
 ## Register your application in a DevOps Pipeline
 
----
 **Info**
 
 We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
@@ -10,22 +9,37 @@ We will be using the pipeline command of the IBM Garage Cloud cli to register th
 ---
 
 1. Open a browser to the Git repository created in the previous step.
+
 2. Copy the url to the Git repository. For GitHub this is done by pressing the Code button and copying the url provided in the Clone section.
+
 3. Start the process to create a pipeline.
 
-oc pipeline ${GIT_URL}
+```bash
+$ oc pipeline ${GIT_URL}
+```
+
 For example:
 
-oc pipeline https://github.com/gct-showcase/inventory-svc
-4.For the deployment of your first app with OpenShift select Tekton as the CI engine.
+```bash
+$ oc pipeline https://github.com/gct-showcase/inventory-svc
+```
+
+4. For the deployment of your first app with OpenShift select Tekton as the CI engine.
+
 5. The first time a pipeline is registered in the namespace, the CLI will ask for a username and Password/Personal Access Token for the Git repository that will be stored in a secret named git-credentials.
 Username: Enter your GitHub user id
 Personal Access Token: Paste your GitHub personal access token
+
 6. When registering a Tekton pipeline, the CLI will attempt to determine the runtime used by the repository that was provided and filter the available pipelines. If only one matches then it will be automatically selected. If it cannot find a match or there is more than one match then you will be prompted to select the pipeline.
+
 7. When registering a Tekton pipeline, the CLI also reads the available parameters from the pipeline and generates prompts for input. In this case, the option of scanning the built image for vulnerabilities is the only options. The scan is performed by the Vulnerability Advisor if you are using IBM Image Registry or by Trivy if another image registry is used. This scan is performed in "scan" stage of pipeline after "img-release" stage.
 
+```
 ? scan-image: Enable the pipeline to scan the image for vulnerabilities?(Y/n)
+```
+
 8. To skip the scan, you have type "n" (No).Otherwise, type "y" (Yes) for performing Vulnerability Scanning on the image.
+
 9. After the pipeline has been created,the command will set up a webhook from the Git host to the pipeline event listener.
 
 ---
