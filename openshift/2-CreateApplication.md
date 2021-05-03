@@ -1,11 +1,11 @@
 # Create an application
 
-If everything went fine in the previous step, you should already be logged on to the OpenShift cluster that has been assigned to you as part of the workshop. To double-check, switch tab to the Cloud Shell and type:
+In the previous section we have installed the necessary client command-line tools and we have tested the connection to our assigned OpenShift cluster. In this part of the workshop we will create an application using one of the Cloud Native Toolkit started kits. For this, we first need to make sure our connection to the cluster is still active. To check this, switch tab to an IBM Cloud Shell and type:
 
 ```bash
 $ oc project
 ```
-This should list the currently active project. If you receive the error message telling that you are not logged on, complete the steps in the 
+This should return the project that is currently active. If you receive an error message telling that you are not logged on, complete the [Copy Login Command](1-Prereqs.md#the-ibm-cloud-shell)
 
 ## Create the development namespace
 
@@ -27,9 +27,8 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 
 ![Developer Dashboard](images/developer-dashboard.png)
 
-## Create your app in Git
+## Create your application in Github
 
----
 **Warning**
 
 Your browser needs to be logged in to your GitHub account for a template to work. If the link from the tile displays the GitHub 404 page, log in and reload the page.

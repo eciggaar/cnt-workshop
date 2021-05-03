@@ -93,7 +93,7 @@ We will work with OpenShift in the Web Console and in the command line, using di
    This should display a whole list of projects/namespaces that you could access on OpenShift.  
 
 
-## 4. Set up the Shell environment for use with the Cloud Native Toolkit
+## 4. Set up the Cloud Shell environment for use with the Cloud Native Toolkit
 
 1. Set up the shell environment by running:
 
@@ -102,7 +102,7 @@ We will work with OpenShift in the Web Console and in the command line, using di
    source ~/.bashrc || source ~/.zshrc
    ```
 
-2. If successful, you should see something like the following:
+2. If successful, the output should be similar to:
 
    ```
    Downloading scripts: https://github.com/cloud-native-toolkit/cloud-shell-commands/releases/download/0.3.5/assets.tar.gz
@@ -124,13 +124,19 @@ We will work with OpenShift in the Web Console and in the command line, using di
       source ~/.zshrc
    ```
 
-3. Follow the instruction given at the end of the output to enable the changes in the current terminal session.
+3. Follow the instruction given at the end of the output to enable the changes in the current terminal session. That is, run
+
+   ```bash
+   source ~/.zshrc
+   ```
+
 4. You can check the shell was installed correctly by checking the oc sync version:
 
    ```bash
    oc sync --version
    ```
 
+   This returns the `igc` version number.
 ---
 
 __Continue with the next part [Create an application](2-CreateApplication.md)__
