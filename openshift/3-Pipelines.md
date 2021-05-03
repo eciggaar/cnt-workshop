@@ -100,9 +100,7 @@ Image Registry
 Once the pipeline has completed successfully, the app will be deployed into the namespace used when registering the pipeline. To validate the app is running follow these steps:
 
 ---
-**Note**
-
-Be sure the namespace context is set correctly before running the following commands
+**Note** :pencil: &nbsp; Be sure the namespace context is set correctly before running the following commands
 
 ---
 

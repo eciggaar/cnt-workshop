@@ -18,9 +18,7 @@ Argo CD supports defining Kubernetes manifests in a number of ways:
 Argo CD compares the actual state of the application in the cluster with the desired state defined in Git and determines if they are out of sync. When it detects the environment is out of sync, Argo CD can be configured to either send out a notification to kick off a separate reconciliation process or Argo CD can automatically synchronize the environments to ensure they match.
 
 ---
-**Note**
-
-Confidential information like passwords and security tokens should not be checked into the Git repository. Managing secrets in Argo CD (!!!provide link!!!) provides information on how to handle confidential information in the GitOps repo.
+**Note** :pencil: &nbsp; Confidential information like passwords and security tokens should not be checked into the Git repository. Managing secrets in Argo CD (!!!provide link!!!) provides information on how to handle confidential information in the GitOps repo.
 
 ---
 
@@ -41,9 +39,7 @@ Argo CD uses a number of terms to refer to the components.
 Argo CD uses a Git repo to express the desired state of the Kubernetes environment. The basic setup uses one repository to represent one project. Within that repository, each application that makes up the project will be described in its own folder. The repository will also contain a branch for each destination (i.e. cluster and namespace) into which we want to deploy the applications.
 
 ---
-**Note**
-
-There is nothing special about a git repository used for git-ops. All that is required at a minimum is a hosted git repository that is accessible from by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
+**Note** :pencil: &nbsp; There is nothing special about a git repository used for git-ops. All that is required at a minimum is a hosted git repository that is accessible from by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
 
 --
 
@@ -90,7 +86,7 @@ igc gitops
 ```
 
 ---
-**Note**
+**Note** :pencil: &nbsp;
 
 * For the secret to be available to the CI pipeline, the secret needs to be created in the same namespace where the pipeline is running.
 * The value provided for branch is the one the pipeline will use to when committing changes to trigger the CD pipeline.
@@ -159,9 +155,7 @@ In Argo CD terms, each deployable component is an application and applications a
 ## Add an application in Argo CD for each application component
 
 ---
-**Warning**
-
-Before continuing to setup ArgoCD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
+**Warning** :warning: &nbsp; Before continuing to setup ArgoCD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
 
 ---
 
