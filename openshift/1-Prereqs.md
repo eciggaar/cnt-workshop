@@ -93,16 +93,45 @@ We will work with OpenShift in the Web Console and in the command line, using di
    This should display a whole list of projects/namespaces that you could access on OpenShift.  
 
 
-## 4. Get the code
+## 4. Set up the Shell environment for use with the Cloud Native Toolkit
 
-In your Cloud Shell, enter the following command to download the code from Github:
+1. Set up the shell environment by running:
 
-```bash
-$ git clone https://github.com/eciggaar/devops-workshop
-$ cd devops-workshop
-```
+   ```bash
+   curl -sL shell.cloudnativetoolkit.dev | bash -
+   source ~/.bashrc || source ~/.zshrc
+   ```
+
+2. If successful, you should see something like the following:
+
+   ```
+   Downloading scripts: https://github.com/cloud-native-toolkit/cloud-shell-commands/releases/download/0.3.5/assets.tar.gz
+   ** Installing argocd cli
+   ** Installing tkn cli
+   ** Installing kube-ps1
+   ** Installing icc
+   ** Installing Cloud-Native Toolkit cli
+   
+   kube-ps1 has been installed to display the current Kubernetes context and namespace in the prompt. It can be turned on and off with the following commands:
+   
+      kubeon     - turns kube-ps1 on for the current session
+      kubeon -g  - turns kube-ps1 on globally
+      kubeoff    - turns kube-ps1 off for the current session
+      kubeoff -g - turns kube-ps1 off globally
+
+   Your shell configuration has been updated. Run the following to apply the changes to the current terminal:
+
+      source ~/.zshrc
+   ```
+
+3. Follow the instruction given at the end of the output to enable the changes in the current terminal session.
+4. You can check the shell was installed correctly by checking the oc sync version:
+
+   ```bash
+   oc sync --version
+   ```
 
 ---
 
-__Continue with the next part [Installing the required OpenShift Operators](2-InstallKnative.md)__
+__Continue with the next part [Create an application](2-CreateApplication.md)__
       
