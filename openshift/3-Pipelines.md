@@ -3,7 +3,7 @@
 ## Register your application in a DevOps Pipeline
 
 ---
-**Info** :information: &nbsp; We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
+**Info** :information_source: &nbsp; We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
 
 ---
 
