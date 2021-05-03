@@ -29,9 +29,8 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 
 ## Create your application in Github
 
-**Warning**
-
-Your browser needs to be logged in to your GitHub account for a template to work. If the link from the tile displays the GitHub 404 page, log in and reload the page.
+---
+:warning: Your browser needs to be logged in to your GitHub account for a template to work. If the link from the tile displays the GitHub 404 page, log in and reload the page.
 
 ---
 
