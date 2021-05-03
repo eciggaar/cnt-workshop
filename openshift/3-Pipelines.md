@@ -34,20 +34,20 @@ Personal Access Token: Paste your GitHub personal access token
 
 7. When registering a Tekton pipeline, the CLI also reads the available parameters from the pipeline and generates prompts for input. In this case, the option of scanning the built image for vulnerabilities is the only options. The scan is performed by the Vulnerability Advisor if you are using IBM Image Registry or by Trivy if another image registry is used. This scan is performed in "scan" stage of pipeline after "img-release" stage.
 
-  ```
-  ? scan-image: Enable the pipeline to scan the image for vulnerabilities?(Y/n)
-  ```
+    ```
+    ? scan-image: Enable the pipeline to scan the image for vulnerabilities?(Y/n)
+    ```
 
 8. To skip the scan, you have type "n" (No).Otherwise, type "y" (Yes) for performing Vulnerability Scanning on the image.
 
 9. After the pipeline has been created,the command will set up a webhook from the Git host to the pipeline event listener.
 
-  ---
-  **Note**
+    ---
+    **Note**
 
-  If the webhook registration step fails, it is likely because the Git credentials are incorrect or do not have enough permission in the repository.
+    If the webhook registration step fails, it is likely because the Git credentials are incorrect or do not have enough permission in the repository.
 
-  ---
+    ---
 
 10. When the command is completed it will present options for next steps. You can use the Tekton cli commands to inspect the pipeline run that has been created and tail the log and/or navigate to the provided url to see the pipeline running from the OpenShift console.
 
@@ -55,11 +55,11 @@ Personal Access Token: Paste your GitHub personal access token
 
 1. The steps to view your registered pipeline will vary based on the type of pipeline (Jenkins or Tekton) and container platform version. For this workshop we'll be using Tekton pipeline and OpenShift as container platform, so for this switch back to your OpenShift web console or in the Cloud Shell type:
 
-  ```bash
-  oc console
-  ```
+    ```bash
+    oc console
+    ```
 
-  Next, copy/paste the URL in a seperate tab in your browser (as the Cloud Shell does not do this automatically for us...).
+    Next, copy/paste the URL in a seperate tab in your browser (as the Cloud Shell does not do this automatically for us...).
 
 2. From menu on the left switch to the Developer mode
 
