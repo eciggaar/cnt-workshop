@@ -53,21 +53,21 @@ Personal Access Token: Paste your GitHub personal access token
 
 ## View your application pipeline
 
-1. The steps to view your registered pipeline will vary based on the type of pipeline (Jenkins or Tekton) and container platform version. For this workshop we'll be using Tekton pipeline and OpenShift as container platform, so for this switch back to your OpenShift web console or in the Cloud Shell type:
+1. The steps to view your registered pipeline will vary based on the type of pipeline (Jenkins or Tekton) and container platform version. For this workshop we use a Tekton pipeline and OpenShift as container platform. So for this, return to your OpenShift web console or type
 
     ```bash
     oc console
     ```
 
-    Next, copy/paste the URL in a seperate tab in your browser (as the Cloud Shell does not do this automatically for us...).
+    in your Cloud Shell to get the URL to the web console. Finally, copy and paste the URL in a seperate tab to actually open it.
 
-2. From menu on the left switch to the Developer mode
+2. Next, from the menu on the left switch to the Developer mode.
 
-3. Select the *dev* project that was used for the application pipeline registration (your `${DEV_NAMESPACE}` project)
+3. Select the *dev* project that was used for the application pipeline registration --- i.e. your `${DEV_NAMESPACE}` project.
 
 4. In the left menu, select *Pipelines*
 
-  You will see your application DevOps pipeline now starting to build and once completed will look like the image below.
+  You should see your application DevOps pipeline running. Once completed, the pipeline run will look like the image below.
 
   ![Running pipeline](images/running-pipeline.png)
 
