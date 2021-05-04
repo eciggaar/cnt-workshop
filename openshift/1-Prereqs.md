@@ -14,6 +14,18 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
 
 1. Logon to the IBM Cloud Dashboard [https://cloud.ibm.com](https://cloud.ibm.com).
 
+## 2. Accesss to Github and create a personal access token
+
+For this workshop, you'll need a Github account. If you don't already have a Github account, you can create one for free at: https://github.com/join
+
+1. [Logon](https://github.com/login) to your Github account in a separate browser tab
+
+1. Create a personal access token and use this as the password when prompted later in the workshop during pipeline creation and hooking your pipeline to your git repo. A personal access token can be created by clicking your profile on the right-top. Then click Settings -> Developer settings and select 'Personal access tokens'. 
+
+![Github Personal Access token](images/git-pa-token.png)
+
+Now create one for this workshop and carefully copy/paste the generated token as it will be shown only once.
+
 ## 2. Assign yourself a pre-provisoned cluster
 
 In this step you will assign yourself a pre-provisioned cluster. 

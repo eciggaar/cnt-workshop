@@ -3,15 +3,15 @@
 ## Register your application in a DevOps Pipeline
 
 ---
-**Info** :information_source: &nbsp; We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see Continuous Integration with Jenkins Guide and Continuous Integration with Tekton Guide
+:information_source: **Info:** &nbsp; We will be using the pipeline command of the IBM Garage Cloud cli to register the DevOps pipeline. The pipeline command gives an option for both Jenkins and Tekton. For more information about working with the different build engines, please see the [Continuous Integration with Jenkins Guide](https://cloudnativetoolkit.dev/tools/jenkins) and [Continuous Integration with Tekton Guide](https://cloudnativetoolkit.dev/tools/tekton).
 
 ---
 
-1. Open a browser to the Git repository created in the previous step.
+1. If not already done, open a separate tab to the Git repository that you've just generated from the Starter Kit template.
 
-2. Copy the url to the Git repository. For GitHub this is done by pressing the Code button and copying the url provided in the Clone section.
+2. Copy the Git repository's URL. For GitHub this is done by pressing the Code button and copying the URL provided in the Clone section.
 
-3. Start the process to create a pipeline.
+3. Next, start the process to create a pipeline.
 
     ```bash
     $ oc pipeline ${GIT_URL}
@@ -20,45 +20,40 @@
     For example:
 
     ```bash
-    $ oc pipeline https://github.com/gct-showcase/inventory-svc
+    $ oc pipeline https://github.com/eciggaar/cnt-typescript
     ```
 
 4. For the deployment of your first app with OpenShift select Tekton as the CI engine.
 
-5. The first time a pipeline is registered in the namespace, the CLI will ask for a username and Password/Personal Access Token for the Git repository that will be stored in a secret named git-credentials.
-Username: Enter your GitHub user id
-Personal Access Token: Paste your GitHub personal access token
+5. The first time a pipeline is registered in the namespace, the CLI will ask for a username and Password/Personal Access Token for the Git repository. These credentials will be stored in a secret named `git-credentials`. 
+
+    * **Username**: Enter your GitHub user id
+    * **Personal Access Token**: Paste your GitHub personal access token
 
 6. When registering a Tekton pipeline, the CLI will attempt to determine the runtime used by the repository that was provided and filter the available pipelines. If only one matches then it will be automatically selected. If it cannot find a match or there is more than one match then you will be prompted to select the pipeline.
 
-7. When registering a Tekton pipeline, the CLI also reads the available parameters from the pipeline and generates prompts for input. In this case, the option of scanning the built image for vulnerabilities is the only options. The scan is performed by the Vulnerability Advisor if you are using IBM Image Registry or by Trivy if another image registry is used. This scan is performed in "scan" stage of pipeline after "img-release" stage.
+7. When registering a Tekton pipeline, the CLI also reads the available parameters from the pipeline and generates prompts for input. In this case, the option to scan the built image for vulnerabilities is the only available option. The scan is performed by the Vulnerability Advisor if you are using IBM Image Registry or by Trivy if another image registry is used. This scan is performed in the "scan" stage of the pipeline after the "img-release" stage.
 
     ```
     ? scan-image: Enable the pipeline to scan the image for vulnerabilities?(Y/n)
     ```
 
-8. To skip the scan, you have type "n" (No).Otherwise, type "y" (Yes) for performing Vulnerability Scanning on the image.
+8. To skip the scan, "n" for (No). Otherwise, type "y" (Yes) for performing a Vulnerability Scan on the image.
 
-9. After the pipeline has been created,the command will set up a webhook from the Git host to the pipeline event listener.
-
-    ---
-    **Note** :pencil: &nbsp; If the webhook registration step fails, it is likely because the Git credentials are incorrect or do not have enough permission in the repository.
+9. After the pipeline has been created, the command will set up a webhook from the Git host to the pipeline event listener.
 
     ---
+    :pencil: **Note:** &nbsp; If the webhook registration step fails, it is likely because the Git credentials are incorrect or that you do not have enough permissions in the repository.
 
-10. When the command is completed it will present options for next steps. You can use the Tekton cli commands to inspect the pipeline run that has been created and tail the log and/or navigate to the provided url to see the pipeline running from the OpenShift console.
+    ---
+
+10. When the command is completed it will present options for next steps. You can use the Tekton cli commands to inspect the pipeline run that has been created and tail the log, and/or navigate to the provided URL to see the pipeline running from the OpenShift console.
 
 ## View your application pipeline
 
-1. The steps to view your registered pipeline will vary based on the type of pipeline (Jenkins or Tekton) and container platform version. For this workshop we use a Tekton pipeline and OpenShift as container platform. So for this, return to your OpenShift web console or type
+1. The steps to view your registered pipeline will vary based on the type of pipeline (Jenkins or Tekton) and container platform version. For this workshop we use a Tekton pipeline and OpenShift as container platform. So for this, use the URL provided in the last step or go the Pipelines section in your OpenShift web console yourself.
 
-    ```bash
-    oc console
-    ```
-
-    in your Cloud Shell to get the URL to the web console. Finally, copy and paste the URL in a seperate tab to actually open it.
-
-2. Next, from the menu on the left switch to the Developer mode.
+2. Then, from the menu on the left switch to the Developer mode.
 
 3. Select the *dev* project that was used for the application pipeline registration --- i.e. your `${DEV_NAMESPACE}` project.
 
@@ -83,7 +78,6 @@ The container image is stored in the IBM Cloud Container Registry:
 1. From the OpenShift console's tools menu or from the Developer Dashboard's tools page, select Image Registry.
 
 2. In the image regisry, you'll see the image the pipeline built for your app, such as us.icr.io/isv-scenarios/stockbffnode-bw with a different tag for each build.
-Image Registry
 
   ![Image registry](images/image-registry.png)
 
@@ -91,7 +85,7 @@ Image Registry
 
 1. From the OpenShift console's tools menu or from the Developer Dashboard's tools page, select Artifactory.
 
-2. In the Artifactory console, select Artifactory > Artifacts > generic-local. You'll see a `isv-scenarios` folder with a different chart for each build, such as `generic-local/isv-scenarios/stockbffnode-bw-0.0.1.tgz`.
+2. In the Artifactory console, select Artifactory > Artifacts > generic-local. You'll see a folder, which typically has the name of your cluster. This folder contains a different chart for each build, such as `generic-local/edcig-oc-cnt1/cnt-typescript-0.0.1.tgz`.
 
   ![Helm repo in Artifactoty](images/artifactory.png)
 
@@ -100,7 +94,7 @@ Image Registry
 Once the pipeline has completed successfully, the app will be deployed into the namespace used when registering the pipeline. To validate the app is running follow these steps:
 
 ---
-**Note** :pencil: &nbsp; Be sure the namespace context is set correctly before running the following commands
+:pencil: **Note:** &nbsp; Be sure the namespace context is set correctly before running the following commands
 
 ---
 
@@ -116,26 +110,26 @@ From the endpoints listed, select the URL for the repo that was just deployed an
 
 The build pipeline is configured to build the source code from the Git repository into a container image. This image is stored in the Image Registry. After that, the image is deployed into the same namespace/project within the development cluster where the pipeline ran and validated for its health. The steps below will walk through locating the installed application within the Web Console.
 
-1. Open the OpenShift web console, or in your Cloud Shell type
+1. Open the **OpenShift Web Console**, or in your Cloud Shell type
 
     ```bash
     oc console
     ```
     and copy/paste the URL into a separate tab to open the console.
 
-2. Change to the Developer view
+2. Change to the **Developer** view
 
-3. Click on Topology menu
+3. Click on **Topology** menu
 
 4. Click on your application deployment in the topology view
 
-5. Click on the Overview tab
+5. Click on the **Overview** tab
 
 6. Increase the number of running pods to 2 pods
 
-7. Click on the Resources tab to view the list of pods
+7. Click on the **Resources** tab to view the list of pods
 
-8. Click on View Logs link to view the logs from each pod
+8. Click on **View Logs** link to view the logs from each pod
 
 9. You can see the running state of your application
 

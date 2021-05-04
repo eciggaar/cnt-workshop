@@ -1,11 +1,12 @@
 # Create an application
 
-In the previous section we have installed the necessary client command-line tools and we have tested the connection to our assigned OpenShift cluster. In this part of the workshop we will create an application using one of the Cloud Native Toolkit started kits. For this, we first need to make sure our connection to the cluster is still active. To check this, switch tab to an IBM Cloud Shell and type:
+In the previous section we have installed all necessary client command-line tools and we have tested the connection to our assigned and pre-provisioned OpenShift cluster. In this part of the workshop we will create our first application using one of the Cloud Native Toolkit started kits. For this, we first need to make sure our connection to the cluster is still active. To check this, switch tab to your IBM Cloud Shell and type the following command:
 
 ```bash
 $ oc project
 ```
-This should return the project that is currently active. If you receive an error message telling that you are not logged on, complete the [Copy Login Command](1-Prereqs.md#the-ibm-cloud-shell)
+
+This should return the project that is currently active. If you receive an error message telling that you are not logged on, complete the [Copy Login Command](1-Prereqs.md#the-ibm-cloud-shell) steps from the previous section.
 
 ## Create the development namespace
 
@@ -23,7 +24,7 @@ where `${DEV_NAMESPACE}` is the name you've chosen for your development namespac
 
 The Developer Dashboard makes it easy for you to navigate to the tools, including a section that allows you to select a set of preconfigured Starter Kits that make seeding your development project very easy.
 
-Before starting, open a browser and make sure you are logged into Github. Next, navigate to the OpenShift web console and open the Application Launcher dropdown from the top-right (1) and select Developer Dashboard (2).
+For this, open a tab in your browser and make sure you are logged on to Github. Next, navigate to the OpenShift web console and open the Application Launcher dropdown from the top-right (1) and select Developer Dashboard (2). If prompted, click 'Log in with OpenShift' and click 'Allow selected permissions' to allow the service account developer-dashboard to obtain the necessary read-only access to your account.
 
 ![Developer Dashboard](images/developer-dashboard.png)
 
@@ -46,7 +47,7 @@ Before starting, open a browser and make sure you are logged into Github. Next, 
 
     * **Owner**: Select a valid GitHub organization that you are authorized to create repositories within.
     * **Repository name**: Enter a name for your repo. GitHub will help with showing a green tick if it is valid (See warning above)
-    * **Description**: Describe your app
+    * **Description**: Describe your app. This is optional.
 
 4. Press **Create repository from template**
 
