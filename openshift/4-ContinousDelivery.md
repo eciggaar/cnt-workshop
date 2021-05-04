@@ -140,7 +140,7 @@ In Argo CD terms, each deployable component is an application and applications a
 
 2. Click on the gear icon on the left menu to access the Settings options
 
-    ![Argo CD config project]()images/argocd-config.png
+    ![Argo CD config project](images/argocd-config.png)
 
 3. Select the Projects option
 
