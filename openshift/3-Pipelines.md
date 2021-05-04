@@ -133,7 +133,7 @@ The build pipeline is configured to build the source code from the Git repositor
 
 9. You can see the running state of your application
 
-  ![Running application in OpenShift](images/running-app-in-oc)
+  ![Running application in OpenShift](images/running-app-in-oc.png)
 
 
 Success

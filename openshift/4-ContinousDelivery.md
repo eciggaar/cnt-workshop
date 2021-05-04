@@ -125,7 +125,7 @@ Now that the repository has been created, we need to tell ArgoCD where it is. Fo
 
 2. Click on the gear icon on the left menu to access the Settings options
 
-    ![ArgoCD config](images/argocd-config-repo.png)
+    ![ArgoCD config](images/argocd-config.png)
 
 3. Select the `Repositories` option
 
@@ -140,7 +140,7 @@ In Argo CD terms, each deployable component is an application and applications a
 
 2. Click on the gear icon on the left menu to access the Settings options
 
-    ![Argo CD config project]()images/argocd-config-project.png
+    ![Argo CD config project]()images/argocd-config.png
 
 3. Select the Projects option
 
