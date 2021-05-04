@@ -99,7 +99,6 @@ We will work with OpenShift in the Web Console and in the command line, using di
 
    ```bash
    curl -sL shell.cloudnativetoolkit.dev | bash -
-   source ~/.bashrc || source ~/.zshrc
    ```
 
 2. If successful, the output should be similar to:
