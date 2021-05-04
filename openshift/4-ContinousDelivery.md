@@ -41,7 +41,7 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
 ---
 :pencil: **Note:** &nbsp; There is nothing special about a git repository used for git-ops. All that is required at a minimum is a hosted git repository that is accessible from by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
 
---
+---
 
 1. Create a new repo from the [Argo CD Starter Kit](https://github.com/IBM/template-argocd-gitops/generate). If you see a 404 error when you click on the link, you need to sign in to github.
 
@@ -86,7 +86,7 @@ igc gitops
 ```
 
 ---
-:pencil: **Note:**
+:pencil: **Note**
 
 * For the secret to be available to the CI pipeline, the secret needs to be created in the same namespace where the pipeline is running.
 * The value provided for branch is the one the pipeline will use to when committing changes to trigger the CD pipeline.
