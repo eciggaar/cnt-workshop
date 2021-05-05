@@ -57,4 +57,9 @@ For this, open a tab in your browser and make sure you are logged on to Github. 
 
 ---
 
-__Continue with the next part [Create the DevOps pipeline](3-Pipelines.md)__
+<p  align="center">
+    <font size="4">
+        <a href="1-Prereqs.md"><< Back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="README.md">Index</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="3-Pipelines.md">Next >></a></td>
+    </font>
+</p>
+
