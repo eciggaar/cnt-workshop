@@ -1,4 +1,4 @@
-# Create an application
+# Create your 1st application with the Toolkit
 
 In the previous section we have installed all necessary client command-line tools and we have tested the connection to our assigned and pre-provisioned OpenShift cluster. In this part of the workshop we will create our first application using one of the Cloud Native Toolkit started kits. For this, we first need to make sure our connection to the cluster is still active. To check this, switch tab to your IBM Cloud Shell and type the following command:
 
@@ -10,7 +10,7 @@ This should return the project that is currently active. If you receive an error
 
 ## Create the development namespace
 
-Before getting started, the development namespace/project needs to be created and prepared for the DevOps pipelines. This is something that would typically happen once at the beginning of a project when a development team is formed and assigned to the cluster.
+Before getting started, the development namespace/project needs to be created and prepared for the DevOps pipelines. This is something that would typically happen once at the beginning of a project, when a development team is formed and assigned to the cluster.
 
 This step copies the common secrets and configMaps that contain the CI/CD configuration from the tools namespace into the development namespace/project. This enables the pipelines to reference the values easily for your project. To create such your own development namespace, switch tab to a Cloud Shell and type:
 
@@ -57,9 +57,4 @@ For this, open a tab in your browser and make sure you are logged on to Github. 
 
 ---
 
-<p  align="center">
-    <font size="4">
-        <a href="1-Prereqs.md"><< Back</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="README.md">Index</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="3-Pipelines.md">Next >></a></td>
-    </font>
-</p>
-
+__Continue with the next part [Create the DevOps pipeline](3-Pipelines.md)__
