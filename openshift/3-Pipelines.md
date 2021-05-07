@@ -51,7 +51,9 @@
 
 ## View your application pipeline
 
-1. The steps to view your registered pipeline will vary based on the type of pipeline (`Jenkins` or `Tekton`) and container platform version. For this workshop we use a Tekton pipeline and OpenShift as container platform. So for this, use the URL provided in the last step or go the Pipelines section in your OpenShift Web Console yourself.
+The steps to view your registered pipeline will vary based on the type of pipeline (`Jenkins` or `Tekton`) and container platform version. For this workshop we use a Tekton pipeline and OpenShift as container platform. 
+
+1. So for this, use the URL provided in the last step or go the **Pipelines** section in your **OpenShift Web Console** yourself.
 
 2. Then, from the menu on the left switch to the **Developer** mode.
 
@@ -68,22 +70,22 @@
 
 The pipeline built two artifacts for deploying your app:
 
-* Container image -- The image registry includes a container image with your app built in.
-* Helm chart -- The artifact repository includes a Helm chart repository that includes a Helm chart for deploying your app.
+* **Container image** -- The image registry includes a container image with your app built in.
+* **Helm chart** -- The artifact repository includes a Helm chart repository that includes a Helm chart for deploying your app.
 
 Let's look at these artifacts in the Toolkit environment.
 
 This toolkit environment is configured to store the container images in the internal OpenShift image repository.
 
-1. From the OpenShift console's tools menu or from the Developer Dashboard's tools page, select Image Registry. This will take you to the interal OpenShift image registry page. To see only the images in your development project, select your development project from the Projects dropdown menu. You should now see the images created by the pipeline build.
+1. From the **OpenShift console**'s tools menu or from the **Developer Dashboard**'s tools page, select **Image Registry**. This will take you to the interal OpenShift image registry page. To see only the images in your development project, select your development project from the **Projects** dropdown menu. You should now see the images created by the pipeline build.
 
   ![Image registry](images/image-registry.png)
 
   The Helm chart is stored in Artifactory:
 
-1. From the OpenShift console's tools menu or from the Developer Dashboard's tools page, select Artifactory.
+1. From the **OpenShift console**'s tools menu or from the **Developer Dashboard**'s tools page, select **Artifactory**.
 
-2. In the Artifactory console, select Artifactory > Artifacts > generic-local. You'll see a folder, which typically has the name of your cluster. This folder contains a different chart for each build, such as `generic-local/edcig-oc-cnt1/cnt-typescript-0.0.1.tgz`.
+2. In the Artifactory console, select **Artifactory -> Artifacts -> generic-local**. You'll see a folder, which typically has the name of your cluster. This folder contains a different chart for each build, such as `generic-local/edcig-oc-cnt1/cnt-typescript-0.0.1.tgz`.
 
   ![Helm repo in Artifactoty](images/artifactory.png)
 
@@ -96,7 +98,7 @@ This toolkit environment is configured to store the container images in the inte
 
 Once the pipeline has completed successfully, the app will be deployed into the namespace used when registering the pipeline. To validate the app is running follow these steps:
 
-1. Open/switch tab to the Cloud Shell and use the command below to retrieve the app ingress endpoint.
+1. Open or switch tab to your Cloud Shell and use the command below to retrieve the application ingress endpoint.
 
     ```bash
     $ oc endpoints

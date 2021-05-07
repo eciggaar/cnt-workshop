@@ -43,7 +43,7 @@ The Developer Dashboard makes it easy for you to navigate to the tools, includin
 
 1. From the Developer Dashboard, click on the **Starter Kits** tab.
 
-2. Pick one of the templates that is a good architectural fit for your application and the language and framework that you prefer to work with. For your first application, select the **Typescript Microservice**. This also works well in the Cloud Shell and is perfect for this workshop.
+2. Pick one of the templates that is a good architectural fit for your application and the language and framework that you prefer to work with. For your first application, we suggest to use the Typescript Microservice template. This works well in the Cloud Shell and hence is perfect for this workshop.
 
     ![Typescript Microservice](images/typescript-microservice.png)
 
