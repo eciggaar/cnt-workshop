@@ -169,7 +169,8 @@ The last step in the process is to define the application(s) within Argo CD that
 
 1. Log into Argo CD user interface.
 
-2. Press **Create Application** or **New App** and provide the following values:
+2. Press **Create Application** or **New App** and provide the following information:
+
     * **Application Name** - The name of the application. It is recommended to use the format of `{namespace}-{image name}`.
         * **Project** - The Argo CD project with which the application should be included.
         * **Sync pPolicy** - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended.
@@ -180,5 +181,9 @@ The last step in the process is to define the application(s) within Argo CD that
         * **Namespace** - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project).
 
 3. Finally, repeat that step for each application and each environment.
+
+**Congrats!!** :smiley: :+1: You successfully completed all steps in the workshop. You learned leveraging the toolkit to create an application, register a pipeline for and the app and connect to your source repo. Finally you learned how to hook the GitOps Argo CD to your CI pipeline to 
+
+* create ahow tonow have your application running inside your development cluster and being delivered using a Tekton based CI pipeline. The next step would be to hook your Continuous Delivery tool -- in our case Argo CD -- to the CI pipeline that we've created in this section.
 
 Having reached this point, we recommend you repeat the process a few more times using different Code Patterns templates and explore the Developer view in OpenShift to get familiar with it.
