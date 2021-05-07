@@ -1,4 +1,4 @@
-# Go faster with the Cloud Native Developer Toolkit 
+# Go Faster with the Cloud Native Developer Toolkit 
 
 ---
 :information_source: **Note:** The instructions in this workshop are taken from the official site https://cloudnativetoolkit.dev. They are a subset from what's available there, so that we can focus soley on the steps we want to accomplish in this workshop.
