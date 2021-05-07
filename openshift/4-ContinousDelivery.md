@@ -1,5 +1,7 @@
 # Continuous Delivery with Argo CD
 
+## What is Argo CD
+
 Argo CD is a declarative, GitOps continuous delivery tool for container platforms like Kubernetes and/or Red Hat OpenShift where the deployment environment is a namespace in the platform.
 
 Argo CD models a collection of applications as a project and uses a Git repository to store the application's desired state.
@@ -32,7 +34,7 @@ Argo CD uses a number of terms to refer to the components.
 
 * Project - A collection of applications that make up a solution.
 
-## Set up the GitOps repo
+### Set up the GitOps repo
 
 Argo CD uses a Git repo to express the desired state of the Kubernetes environment. The basic setup uses one repository to represent one [project](https://argoproj.github.io/argo-cd/user-guide/projects/). Within that repository, each [application](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#applications) that makes up the project will be described in its own folder. The repository also contains a branch for each destination (i.e. cluster and namespace) into which we want to deploy the applications.
 
@@ -62,7 +64,7 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
     $ git push -u origin test
     ```
 
-## Hook the CI pipeline to the CD pipeline
+### Hook the CI pipeline to the CD pipeline
 
 The last stage in the CI pipeline updates a GitOps repository with the updated application metadata from the build. In order to do that, the CI pipeline needs to know which repository should be used and needs the credentials to push changes to that repository. As with other configuration within the pipeline, this is handled with config maps and secrets:
 
@@ -95,7 +97,7 @@ Fortunately the IGC CLI provides a gitops command to simplify this step. Informa
 
 3. Now run a new Pipeline and make sure a directory for the application is created on the GitOps Git repository. This is required before completing the configuration of ArgoCD.
 
-## Configure Release namespaces
+### Configure Release namespaces
 
 ArgoCD will deploy the application into the "releases" namespace such as ${TEST_NAMESPACE} or ${STAGING_NAMESPACE}.
 
@@ -113,7 +115,7 @@ ArgoCD will deploy the application into the "releases" namespace such as ${TEST_
     $ oc policy add-role-to-group system:image-puller system:serviceaccounts:{TEST_NAMESPACE} -n {DEV_NAMESPACE}
     ```
 
-## Register the GitOps repo in Argo CD
+### Register the GitOps repo in Argo CD
 
 Now that the repository has been created, we need to tell Argo CD where it is. 
 
@@ -131,7 +133,7 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 
 4. Click either the `Connect Repo using HTTPS` or `Connect Repo using SSH` button at the top and provide the information for the GitOps repo you just created. For `HTTPS` you can use the access token you used when you ran `igc gitops`.
 
-## Create a project in Argo CD
+### Create a project in Argo CD
 
 In Argo CD terms, each deployable component is an application and applications are grouped into projects. Projects are not required for Argo CD to be able to deploy applications, but it helps to organize applications and provide some restrictions on what can be done for applications that make up a project.
 
@@ -154,7 +156,7 @@ In Argo CD terms, each deployable component is an application and applications a
         * **Destinations** - Add `https://kubernetes.default.svc` for the cluster url and ${TEST_NAMESPACE} for the namespace
         * Press **Create**.
 
-## Add an application in Argo CD for each application component
+### Add an application in Argo CD for each application component
 
 ---
 :warning: **Warning:** &nbsp; Before continuing to setup ArgoCD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
