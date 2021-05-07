@@ -173,17 +173,15 @@ The last step in the process is to define the application(s) within Argo CD that
 
     * **Application Name** - The name of the application. It is recommended to use the format of `{namespace}-{image name}`.
         * **Project** - The Argo CD project with which the application should be included.
-        * **Sync pPolicy** - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended.
+        * **Sync Policy** - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended.
         * **Repository URL** - The GitOps URL where the configuration is stored (restricted to git URLs configured in the Argo Project).
         * **Revision** - The Git branch where the configuration for this instance is stored. This would `test` in our case.
         * **Path** - The path within the repository where the application config is located (should be the application name).
         * **Cluster** - The destination cluster URL for the deployment.
         * **Namespace** - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project).
 
-3. Finally, repeat that step for each application and each environment.
+3. Repeat that step for each application and each environment.
 
-**Congrats!!** :smiley: :+1: You successfully completed all steps in the workshop. You learned leveraging the toolkit to create an application, register a pipeline for and the app and connect to your source repo. Finally you learned how to hook the GitOps Argo CD to your CI pipeline to 
-
-* create ahow tonow have your application running inside your development cluster and being delivered using a Tekton based CI pipeline. The next step would be to hook your Continuous Delivery tool -- in our case Argo CD -- to the CI pipeline that we've created in this section.
+**Congrats!!** :smiley: :+1: You successfully completed all steps in the workshop. You learned how to leverage the toolkit to create an application, register a pipeline for this app and how to hook this CI pipeline to an Argo CD instance to monitor the state and deploy your application to the so-called "release" namespaces. Also you've seen the different testing capabilities that were used in the CI pipeline during the build phase.
 
 Having reached this point, we recommend you repeat the process a few more times using different Code Patterns templates and explore the Developer view in OpenShift to get familiar with it.
