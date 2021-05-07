@@ -13,13 +13,13 @@ The toolkit has been built to support the principles of a robust SDLC while bein
 
 The workshop is split into the following sections:
 
-1. Prerequisites (access to an OpenShift cluster, work environment, etc.)
+* Prerequisites (access to an OpenShift cluster, work environment, etc.)
 
-1. Create your first application using one of the Cloud Native Toolkit Starter Kits
+* Create your first application using one of the Cloud Native Toolkit Starter Kits
 
-1. Set up a DevOps pipeline for your application
+* Set up a DevOps pipeline for your application
 
-1. Continuous Delivery with Argo CD
+* Continuous Delivery with Argo CD
 
 
 Click the link below to get started & have fun!! Happy coding :smiley:
