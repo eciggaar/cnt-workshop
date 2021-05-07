@@ -106,9 +106,9 @@ Once the pipeline has completed successfully, the app will be deployed into the 
 
 2. From the endpoints listed, select the URL for the repo that was just deployed and press Enter to open that URL in a web browser. Validate the application is working as expected.
 
-## Locate the app in the web console
+## Locate the application in the web console
 
-The build pipeline is configured to build the source code from the Git repository into a container image. This image is stored in the Image Registry. After that, the image is deployed into the same namespace/project within the development cluster where the pipeline ran and validated for its health. The steps below will walk you through locating the installed application within the Web Console.
+The build pipeline is configured to build the source code from the Git repository into a container image. This image is stored in the Image Registry. After that, the image is deployed into the same namespace / project within the development cluster where the pipeline ran and validated for its health. The steps below will walk you through locating the installed application within the web console.
 
 1. Open the **OpenShift Web Console**.
 
@@ -132,7 +132,7 @@ The build pipeline is configured to build the source code from the Git repositor
 
 9. You can see the running state of your application.
 
-  ![Running application in OpenShift](images/running-app-in-oc.png)
+    ![Running application in OpenShift](images/running-app-in-oc.png)
 
 
 Success
