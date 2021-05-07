@@ -18,15 +18,15 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
 
 For this workshop, you'll need a Github account. If you don't already have a Github account, you can create one for free at: https://github.com/join
 
-1. [Logon](https://github.com/login) to your Github account in a separate browser tab
+1. Logon to your [Github account](https://github.com/login) in a separate browser tab.
 
-For your CI pipeline (Jenkins, Tekton, etc) to connect to and use your GitHub repo, a GitHub personal access token is needed with `public_repo` and `write:repo_hook` scopes. The Personal Access Token only needs to be generated once, because it is associated with the GitHub organization and can be used to access any of the organization’s repos.
+      For your CI pipeline (Jenkins, Tekton, etc) to connect to and use your GitHub repo, a GitHub personal access token is needed with `public_repo` and `write:repo_hook` scopes. The Personal Access Token only needs to be generated once, because it is associated with the GitHub organization and can be used to access any of the organization’s repos.
 
-1. Navigate to Developer Settings and generate a new token; name it something like “CI pipeline”
+1. Navigate to Developer Settings and generate a new token; name it something like "CI pipeline".
 
-1. Select `public_repo` scope to enable git clone
+1. Select `public_repo` scope to enable git clone.
 
-1. Select `write:repo_hook` scope so the pipeline can create a web hook
+1. Select `write:repo_hook` scope so the pipeline can create a web hook.
 
    ![Github Personal Access token](images/git-pa-token.png)
 
