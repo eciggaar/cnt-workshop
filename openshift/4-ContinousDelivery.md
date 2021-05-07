@@ -71,9 +71,9 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
 The last stage in the CI pipeline updates a GitOps repository with the updated application metadata from the build. In order to do that, the CI pipeline needs to know which repository should be used and needs the credentials to push changes to that repository. As with other configuration within the pipeline, this is handled with config maps and secrets:
 
 * A secret named `git-credentials` holds the credentials the CI pipeline uses to access all the respositories in the Git host (e.g. GitHub, GitLab, BitBucket, etc. If you used the IGC CLI to register the pipeline then this secret has already been created.
-* A config map named `gitops-repo` holds the url and branch for the gitops repository.
+* A config map named `gitops-repo` holds the URL and branch for the GitOps repository.
 
-Fortunately the IGC CLI provides a gitops command to simplify this step. Information on how to use the command as well as the alternative manual steps can be found in the IGC CLI gitops command section.
+Fortunately the IGC CLI provides a `gitops` command to simplify this step. Information on how to use the command as well as the alternative manual steps can be found in the IGC CLI gitops command section.
 
 1. Make sure to switch context to the project/namespace CI namespace
 
@@ -97,19 +97,19 @@ Fortunately the IGC CLI provides a gitops command to simplify this step. Informa
 
     As of v2.0.0 of the Tekton tasks and the Jenkins pipelines, the CI pipeline will create a folder and the initial configuration for an application deployment if it doesn't already exist. This means, there is no other manual configuration required to set up the repository.
 
-3. Now run a new Pipeline and make sure a directory for the application is created on the GitOps Git repository. This is required before completing the configuration of ArgoCD.
+3. Now run a new Pipeline and make sure a directory for the application is created on the GitOps repository. This is required before completing the configuration of Argo CD.
 
 ### Configure Release namespaces
 
-ArgoCD will deploy the application into the "releases" namespace such as ${TEST_NAMESPACE} or ${STAGING_NAMESPACE}.
+Argo CD will deploy the application into the "releases" namespace such as `${TEST_NAMESPACE}` or `${STAGING_NAMESPACE}`.
 
-1. Creat a release namespace where ArgoCD will deploy the application
+1. Creat a release namespace where Argo CD will deploy the application:
 
     ```bash
     $ oc new-project ${TEST_NAMESPACE}
     ```
 
-    where `${TEST_NAMESPACE}` is the name you've chosen for your testing namespace. As we are using the internal OpenShift Image Registry for this workshop, we need to give permission to the services accounts in the "release" namespaces (i.e. your `${TEST_NAMESPACE}` namespace) to be able to pull images from the "development" namespaces (i.e. your `${DEV_NAMESPACE}` namespace). 
+    Here `${TEST_NAMESPACE}` reflects the name you've chosen for your testing namespace. As we are using the internal OpenShift Image Registry for this workshop, we need to give permission to the services accounts in the "release" namespaces (i.e. your `${TEST_NAMESPACE}` namespace) to be able to pull images from the "development" namespaces (i.e. your `${DEV_NAMESPACE}` namespace). 
     
 2. For this, grant access to service accounts in the new `${TEST_NAMESPACE}` to pull the container image from the`${DEV_NAMESPACE}` namespace. 
 
@@ -125,13 +125,13 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 
 1. Log into Argo CD by clicking **Login via OpenShift**. 
 
-1. Next, click 'Allow selected permissions' to give the `argocd-dex-server` service account `read-only` access to your account.
+1. Next, click **Allow selected permissions** to give the `argocd-dex-server` service account `read-only` access to your account.
 
-2. Click on the gear icon on the left menu to access the Settings options
+2. Click on the gear icon on the left menu to access the Settings options.
 
-    ![ArgoCD config](images/argocd-config.png)
+    ![Argo CD config](images/argocd-config.png)
 
-3. Select the `Repositories` option
+3. Select the `Repositories` option.
 
 4. Click either the `Connect Repo using HTTPS` or `Connect Repo using SSH` button at the top and provide the information for the GitOps repo you just created. For `HTTPS` you can use the access token you used when you ran `igc gitops`.
 
@@ -140,15 +140,15 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 In Argo CD terms, each deployable component is an application and applications are grouped into projects. Projects are not required for Argo CD to be able to deploy applications, but it helps to organize applications and provide some restrictions on what can be done for applications that make up a project.
 
 
-1. Log into the Argo CD user interface
+1. Log into the Argo CD user interface.
 
-2. Click on the gear icon on the left menu to access the Settings options
+2. Click on the gear icon on the left menu to access the **Settings** options.
 
     ![Argo CD config project](images/argocd-config.png)
 
-3. Select the Projects option
+3. Select the **Projects** option.
 
-4. Press the New Project button at the top of the page
+4. Press the **New Project** button at the top of the page.
 
 5. Specify the properties for the new project
 
@@ -161,7 +161,7 @@ In Argo CD terms, each deployable component is an application and applications a
 ### Add an application in Argo CD for each application component
 
 ---
-:warning: **Warning:** &nbsp; Before continuing to setup ArgoCD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
+:warning: **Warning:** &nbsp; Before continuing to setup Argo CD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
 
 ---
 
@@ -171,7 +171,7 @@ The last step in the process is to define the application(s) within Argo CD that
 
 2. Press `New Application` and provide the following values:
     * `application name` - The name of the application. It is recommended to use the format of `{namespace}-{image name}`
-        * `project` - The ArgoCD project with which the application should be included
+        * `project` - The Argo CD project with which the application should be included
         * `sync-policy` - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended
         * `repository url` - The Git url where the configuration is stored (restricted to git urls configured in the Argo Project)
         * `revision` - The Git branch where the configuration for this instance is stored
