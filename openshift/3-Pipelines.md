@@ -135,7 +135,7 @@ The build pipeline is configured to build the source code from the Git repositor
     ![Running application in OpenShift](images/running-app-in-oc.png)
 
 
-    You now have your application running inside your development cluster and being delivered using a Tekton based CI pipeline. The next step would be to hook your Continuous Delivery tool -- in our case Argo CD -- to the CI pipeline that we've created in this section.
+    **Congrats!** :smiley: :+1: You now have your application running inside your development cluster and being delivered using a Tekton based CI pipeline. The next step would be to hook your Continuous Delivery tool -- in our case Argo CD -- to the CI pipeline that we've created in this section.
 
 ---
 
