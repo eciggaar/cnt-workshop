@@ -138,13 +138,13 @@ We will work with OpenShift in the Web Console and in the command line, using di
 
    Your shell configuration has been updated. Run the following to apply the changes to the current terminal:
 
-      source ~/.zshrc
+      source ~/.bashrc
    ```
 
 3. Follow the instruction given at the end of the output to enable the changes in the current terminal session. That is, run
 
    ```bash
-   $ source ~/.zshrc
+   $ source ~/.bashrc
    ```
 
 4. You can check the shell was installed correctly by checking the oc sync version:
