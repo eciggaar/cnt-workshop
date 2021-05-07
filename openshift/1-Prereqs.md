@@ -12,7 +12,7 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
     
     Registration is free and without any obligations.
 
-1. If you already happen to have an account, please go to the same [link](https://ibm.biz/Bdffsi) and click **Log in** on the top right of the page to continue.
+1. If you already have an IBM Cloud account, please go to the same [link](https://ibm.biz/Bdffsi) and click **Log in** on the top right of the page to continue.
 
 ## 2. Accesss to Github and create a personal access token
 
@@ -20,9 +20,9 @@ For this workshop, you'll need a Github account. If you don't already have a Git
 
 1. Logon to your [Github account](https://github.com/login) in a separate browser tab.
 
-      For your CI pipeline (Jenkins, Tekton, etc) to connect to and use your GitHub repo, a GitHub personal access token is needed with `public_repo` and `write:repo_hook` scopes. The Personal Access Token only needs to be generated once, because it is associated with the GitHub organization and can be used to access any of the organization’s repos.
+      For your CI pipeline (Jenkins, Tekton, etc) to connect to and use your GitHub repo, a [GitHub personal access token](https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line) is needed with `public_repo` and `write:repo_hook` scopes. The Personal Access Token only needs to be generated once, because it is associated with the GitHub organization and can be used to access any of the organization’s repos.
 
-1. Navigate to Developer Settings and generate a new token; name it something like "CI pipeline".
+1. Navigate to [Developer Settings](https://github.com/settings/tokens) and generate a new token; name it something like "CI pipeline".
 
 1. Select `public_repo` scope to enable git clone.
 
