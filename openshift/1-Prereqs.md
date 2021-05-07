@@ -156,5 +156,5 @@ We will work with OpenShift in the Web Console and in the command line, using di
    This returns the `igc` version number.
 ---
 
-__Continue with the next part: [Create your 1st application with the Toolkit](2-CreateApplication.md)__
+__Continue with the next part: [Create your first application with the Toolkit](2-CreateApplication.md)__
       
