@@ -93,7 +93,7 @@ Fortunately the IGC CLI provides a gitops command to simplify this step. Informa
 
     As of v2.0.0 of the Tekton tasks and the Jenkins pipelines, the CI pipeline will create a folder and the initial configuration for an application deployment if it doesn't already exist. This means, there is no other manual configuration required to set up the repository.
 
-3. Now run a new Pipeline and make sure a directory for the application is created on the gitops git repository. This is required before configuring ArgoCD.
+3. Now run a new Pipeline and make sure a directory for the application is created on the GitOps Git repository. This is required before completing the configuration of ArgoCD.
 
 ## Configure Release namespaces
 
@@ -105,21 +105,23 @@ ArgoCD will deploy the application into the "releases" namespace such as ${TEST_
     $ oc new-project ${TEST_NAMESPACE}
     ```
 
-where `${TEST_NAMESPACE}` is the name you've chosen for your testing namespace. The release namespaces need pull secrets for the application container images to be pulled. In this workshop we are using the IBM Container Image Registry. For this, copy the pull secret `all-icr-io` from the `default` namespace and then add this secret to the service account used by your application (ie `default` service account)
-
-2. Use the Toolkit CLI to copy the secret and setup the service account
+    where `${TEST_NAMESPACE}` is the name you've chosen for your testing namespace. As we are using the internal OpenShift Image Registry for this workshop, we need to give permission to the services accounts in the "release" namespaces (i.e. your `${TEST_NAMESPACE}` namespace) to be able to pull images from the "development" namespaces (i.e. your `${DEV_NAMESPACE}` namespace). 
+    
+2. For this, grant access to service accounts in the new `${TEST_NAMESPACE}` to pull the container image from the`${DEV_NAMESPACE}` namespace. 
 
     ```bash
-    $ igc pull-secret ${TEST_NAMESPACE} -t default -z default
+    $ oc policy add-role-to-group system:image-puller system:serviceaccounts:{TEST_NAMESPACE} -n {DEV_NAMESPACE}
     ```
 
-## Register the GitOps repo in ArgoCD
+## Register the GitOps repo in Argo CD
 
-Now that the repository has been created, we need to tell ArgoCD where it is. For this, open the Developer Dashboard and click the ArgoCD link to open ArgoCD.
+Now that the repository has been created, we need to tell Argo CD where it is. 
 
-1. Log into ArgoCD by clicking Login via OpenShift. 
+1. For this, open the **Developer Dashboard** and click the Argo CD link to open Argo CD.
 
-1. Next, click 'Allow selected permissions' to give the argocd-dex-server service account read-only access to your account.
+1. Log into Argo CD by clicking **Login via OpenShift**. 
+
+1. Next, click 'Allow selected permissions' to give the `argocd-dex-server` service account `read-only` access to your account.
 
 2. Click on the gear icon on the left menu to access the Settings options
 
@@ -147,10 +149,10 @@ In Argo CD terms, each deployable component is an application and applications a
 5. Specify the properties for the new project
 
     * Name - Provide the name for the project
-        * Description - A brief description of the project
-        * Source - Press Add source and pick the Git repository from the list that was added previously
-        * Destinations - Add `https://kubernetes.default.svc` for the cluster url and ${TEST_NAMESPACE} for the namespace
-        * Press Create
+        * **Description** - A brief description of the project
+        * **Source** - Press Add source and pick the Git repository from the list that was added previously
+        * **Destinations** - Add `https://kubernetes.default.svc` for the cluster url and ${TEST_NAMESPACE} for the namespace
+        * Press **Create**.
 
 ## Add an application in Argo CD for each application component
 
