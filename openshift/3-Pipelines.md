@@ -89,7 +89,7 @@ This toolkit environment is configured to store the container images in the inte
 
     ![Helm repo in Artifactoty](images/artifactory.png)
 
-## Access the running app
+## Access your running application
 
 ---
 :pencil: **Note:** &nbsp; Be sure the namespace context is set correctly before running the following commands
