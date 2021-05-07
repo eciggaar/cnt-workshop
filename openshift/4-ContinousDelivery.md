@@ -39,7 +39,7 @@ Argo CD uses a number of terms to refer to the components.
 Argo CD uses a Git repo to express the desired state of the Kubernetes environment. The basic setup uses one repository to represent one [project](https://argoproj.github.io/argo-cd/user-guide/projects/). Within that repository, each [application](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#applications) that makes up the project will be described in its own folder. The repository also contains a branch for each destination (i.e. cluster and namespace) into which we want to deploy the applications.
 
 ---
-:pencil: **Note:** &nbsp; There is nothing special about a git repository used for git-ops. All that is required at a minimum is a hosted git repository that is accessible from by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
+:pencil: **Note:** &nbsp; There is nothing special about a git repository used for GitOps. All that is required at a minimum is a hosted git repository that is accessible by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
 
 ---
 
