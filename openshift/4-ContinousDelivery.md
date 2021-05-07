@@ -28,11 +28,11 @@ Argo CD compares the actual state of the application in the cluster with the des
 
 Argo CD uses a number of terms to refer to the components.
 
-* Application - A deployable unit.
+* **Application** - A deployable unit.
 
     In the context of the environment, an application is one Helm chart that contains one container image that was produced by one CI pipeline. While Helm charts and images could certainly be combined to make more sophisticated applications in more advanced scenarios, we will be using this simple definition here.
 
-* Project - A collection of applications that make up a solution.
+* **Project** - A collection of applications that make up a solution.
 
 ### Set up the GitOps repo
 
