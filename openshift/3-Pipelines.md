@@ -85,7 +85,7 @@ This toolkit environment is configured to store the container images in the inte
 
 1. From the **OpenShift console**'s tools menu or from the **Developer Dashboard**'s tools page, select **Artifactory**.
 
-2. In the Artifactory console, select **Artifactory -> Artifacts -> generic-local**. You'll see a folder, which typically has the name of your cluster. This folder contains a different chart for each build, such as `generic-local/edcig-oc-cnt1/cnt-typescript-0.0.1.tgz`.
+2. In the **Artifactory** console, select **Artifactory -> Artifacts -> generic-local**. You'll see a folder, which typically has the name of your cluster. This folder contains a different chart for each build, such as `generic-local/edcig-oc-cnt1/cnt-typescript-0.0.1.tgz`.
 
   ![Helm repo in Artifactoty](images/artifactory.png)
 
