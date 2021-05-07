@@ -1,6 +1,6 @@
 # Continuous Delivery with Argo CD
 
-Argo CD is a declarative, GitOps continuous delivery tool for Kubernetes. The deployment environment is a namespace in a container platform like Kubernetes or Red Hat OpenShift.
+Argo CD is a declarative, GitOps continuous delivery tool for container platforms like Kubernetes and/or Red Hat OpenShift where the deployment environment is a namespace in the platform.
 
 Argo CD models a collection of applications as a project and uses a Git repository to store the application's desired state.
 
@@ -26,15 +26,15 @@ Argo CD compares the actual state of the application in the cluster with the des
 
 Argo CD uses a number of terms to refer to the components.
 
-* Application - A deployable unit
+* Application - A deployable unit.
 
     In the context of the environment, an application is one Helm chart that contains one container image that was produced by one CI pipeline. While Helm charts and images could certainly be combined to make more sophisticated applications in more advanced scenarios, we will be using this simple definition here.
 
-* Project - A collection of applications that make up a solution
+* Project - A collection of applications that make up a solution.
 
 ## Set up the GitOps repo
 
-Argo CD uses a Git repo to express the desired state of the Kubernetes environment. The basic setup uses one repository to represent one project. Within that repository, each application that makes up the project will be described in its own folder. The repository will also contain a branch for each destination (i.e. cluster and namespace) into which we want to deploy the applications.
+Argo CD uses a Git repo to express the desired state of the Kubernetes environment. The basic setup uses one repository to represent one [project](https://argoproj.github.io/argo-cd/user-guide/projects/). Within that repository, each [application](https://argoproj.github.io/argo-cd/operator-manual/declarative-setup/#applications) that makes up the project will be described in its own folder. The repository also contains a branch for each destination (i.e. cluster and namespace) into which we want to deploy the applications.
 
 ---
 :pencil: **Note:** &nbsp; There is nothing special about a git repository used for git-ops. All that is required at a minimum is a hosted git repository that is accessible from by the Argo CD instance. The Argo CD Starter Kit used in the following steps is optional and provides some application templates to help simplify some configuration activities.
@@ -77,23 +77,23 @@ Fortunately the IGC CLI provides a gitops command to simplify this step. Informa
     $ oc project ${DEV_NAMESPACE}
     ```
 
-2. Run the gitops command to create the config map and secret in the CI namespace
+2. Run the `gitops` command to create the config map and secret in the CI namespace
 
     ```bash
     $ igc gitops
     ```
 
----
-:pencil: **Note**
+    ---
+    :pencil: **Note**
 
-* For the secret to be available to the CI pipeline, the secret needs to be created in the same namespace where the pipeline is running.
-* The value provided for branch is the one the pipeline will use to when committing changes to trigger the CD pipeline.
+    * For the secret to be available to the CI pipeline, the secret needs to be created in the same namespace where the pipeline is running.
+    * The value provided for branch is the one the pipeline will use to when committing changes to trigger the CD pipeline.
 
----
+    ---
 
-As of v2.0.0 of the Tekton tasks and the Jenkins pipelines, the CI pipeline will create a folder and the initial configuration for an application deployment if it doesn't already exist. This means, there is no other manual configuration required to set up the repository.
+    As of v2.0.0 of the Tekton tasks and the Jenkins pipelines, the CI pipeline will create a folder and the initial configuration for an application deployment if it doesn't already exist. This means, there is no other manual configuration required to set up the repository.
 
-Now run a new Pipeline and make sure a directory for the application is created on the gitops git repository. This is required before configuring ArgoCD.
+3. Now run a new Pipeline and make sure a directory for the application is created on the gitops git repository. This is required before configuring ArgoCD.
 
 ## Configure Release namespaces
 
