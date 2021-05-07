@@ -47,7 +47,7 @@ The Developer Dashboard makes it easy for you to navigate to the tools, includin
 
     ![Typescript Microservice](images/typescript-microservice.png)
 
-3. Click on a Starter Kit **Tile** to create your app github repository from the template repository selected.  You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
+3. Click on the Starter Kit tile **TypeScript Microservice** to create your app github repository from the template repository selected.  You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
 
 4. Next, complete the [GitHub create repository from template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) process.
 
