@@ -18,13 +18,11 @@ Argo CD supports defining Kubernetes manifests in a number of ways:
 Argo CD compares the actual state of the application in the cluster with the desired state defined in Git and determines if they are out of sync. When it detects the environment is out of sync, Argo CD can be configured to either send out a notification to kick off a separate reconciliation process or Argo CD can automatically synchronize the environments to ensure they match.
 
 ---
-:pencil: **Note:** &nbsp; Confidential information like passwords and security tokens should not be checked into the Git repository. Managing secrets in Argo CD (!!!provide link!!!) provides information on how to handle confidential information in the GitOps repo.
+:pencil: **Note:** &nbsp; Confidential information like passwords and security tokens should not be checked into the Git repository. [Managing secrets in Argo CD](https://cloudnativetoolkit.dev/tools/argocd/#managing-secrets-in-argo-cd)) provides information on how to handle confidential information in the GitOps repo.
 
 ---
 
 ## Configuring GitOps with Argo CD
-
-**Terminology:**
 
 Argo CD uses a number of terms to refer to the components.
 
@@ -47,22 +45,22 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
 
 2. Clone the project to your machine
 
-```bash
-git clone ${GIT_URL_GITOPS}
-```
+    ```bash
+    $ git clone ${GIT_URL_GITOPS}
+    ```
 
 3. navigate into the directory
 
-```bash
-cd ${GIT_DIRECTORY}
-```
+    ```bash
+    $ cd ${GIT_DIRECTORY}
+    ```
 
 4. Create and push test branch
 
-```bash
-git checkout -b test
-git push -u origin test
-```
+    ```bash
+    $ git checkout -b test
+    $ git push -u origin test
+    ```
 
 ## Hook the CI pipeline to the CD pipeline
 
@@ -75,15 +73,15 @@ Fortunately the IGC CLI provides a gitops command to simplify this step. Informa
 
 1. Make sure to switch context to the project/namespace CI namespace
 
-```bash
-oc project ${DEV_NAMESPACE}
-```
+    ```bash
+    $ oc project ${DEV_NAMESPACE}
+    ```
 
 2. Run the gitops command to create the config map and secret in the CI namespace
 
-```bash
-igc gitops
-```
+    ```bash
+    $ igc gitops
+    ```
 
 ---
 :pencil: **Note**
@@ -103,17 +101,17 @@ ArgoCD will deploy the application into the "releases" namespace such as ${TEST_
 
 1. Creat a release namespace where ArgoCD will deploy the application
 
-```bash
-oc new-project ${TEST_NAMESPACE}
-```
+    ```bash
+    $ oc new-project ${TEST_NAMESPACE}
+    ```
 
 where `${TEST_NAMESPACE}` is the name you've chosen for your testing namespace. The release namespaces need pull secrets for the application container images to be pulled. In this workshop we are using the IBM Container Image Registry. For this, copy the pull secret `all-icr-io` from the `default` namespace and then add this secret to the service account used by your application (ie `default` service account)
 
 2. Use the Toolkit CLI to copy the secret and setup the service account
 
-```bash
-igc pull-secret ${TEST_NAMESPACE} -t default -z default
-```
+    ```bash
+    $ igc pull-secret ${TEST_NAMESPACE} -t default -z default
+    ```
 
 ## Register the GitOps repo in ArgoCD
 
@@ -175,4 +173,4 @@ The last step in the process is to define the application(s) within Argo CD that
         * `destination cluster` - The cluster url for the deployment
         * `destination namespace` - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project)
 
-3. Repeat that step for each application and each environment
+3. Finally, repeat that step for each application and each environment.

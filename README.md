@@ -1,22 +1,28 @@
-# How to build a modern CI/CD workflow with Tekton on OpenShift, Part 1
+# Go faster with the Cloud Native Developer Toolkit 
 
 ## Learning objectives
 
-This workshop is all about creating and deploying a Quarkus application as a Knative service on OpenShift using a modern CI/CD workflow. It is inspired on two great existing blogs on this topic, written by David Sancho --- see the [Resources](#resources) section below for the links. In this first part of the workshop, we will focus on setting up a Tekton pipeline and how to use it to deploy a simple Quarkus application.
+---
+:information_source: **Note:** The instructions in this workshop are taken from the official site https://cloudnativetoolkit.dev. They are a subset from what's available there, so that we can focus soley on the steps we want to accomplish in this workshop.
 
-It more detail, this part of the workshop covers:
+---
+
+The Cloud-Native Toolkit is an open-source collection of assets that enable application development and that support teams to deliver business value quickly using a Red Hat OpenShift or IBM Cloud-managed Kubernetes. This workshop shows how the toolkit can be used to support delivering business applications through the entire Software Development Life Cycle (SDLC).
+
+
+
+The Cloud-Native Toolkit environment has been built to support the principles of a robust SDLC while being flexible enough to fit into a wide range of development settings and toolchains. The Cloud-Native Toolkit supports different tool selections, from open source versions of tools like Artifactory and SonarQube to enterprise-class software like IBM Cloud Pak for Applications and IBM Multicloud Manager. The key benefit is to make the end-to-end CI/CD development lifecycle consistent across each platform and make the out-of-the-box developer experience as simple as possible.
+
+In more detail, in the workshop we'll you'll this part of the workshop covers:
 
 1. Prerequisites (access to an OpenShift cluster, work environment, etc.)
 
-1. Installing the required OpenShift Operators
+1. Create an application using the Starter Kit
 
-1. Create an OpenShift Pipeline and deploy your Quarkus application with it
+1. Set up a DevOps pipeline for your application
 
-1. Make a change to the application and get this deployed using the pipeline
+1. Continuous Delivery with Argo CD
 
-1. Leverage Traffic Management to test your new changes
-
-1. Auto-Scaling (optional)
 
 Click the link below to get started & have fun!! Happy coding :smiley:
 
@@ -26,34 +32,22 @@ Click the link below to get started & have fun!! Happy coding :smiley:
 
 ---
 
-To complete this workshop, a basic understanding of Kubernetes/OpenShift, Tekton pipelines and application deployment on OpenShift is instrumental!
-
-## Tools
-
-In this workshop we will be using the IBM Cloud Shell which has all required tools installed.
-
-Should you prefer to run the workshop completely off your own workstation you need the following tools.
-
-Tool  |Source       
-----------------|----
-git CLI|https://git-scm.com/downloads 
-ibmcloud CLI|https://cloud.ibm.com/docs/cli?opic=cli-install-ibmcloud-cli
-ibmcloud plugin|https://cloud.ibm.com/docs/cli?topic=cli-plug-ins -- Install kubernetes-service plugin
-oc|Download from OpenShift Web Console, click on question mark
-kn|https://knative.dev/docs/install/install-kn/
-hey|HTTP Load generator: https://github.com/rakyll/hey
 
 ## Resources
 
-You can find detailed information and learn more about Knative here:
+You can find detailed information and learn more about the Cloud Native Toolkit, OpenShift and cloud native development here:
 
-1. [Building modern CI/CD workflows for serverless applications with Red Hat OpenShift Pipelines and Argo CD, Part 1](https://developers.redhat.com/blog/2020/10/01/building-modern-ci-cd-workflows-for-serverless-applications-with-red-hat-openshift-pipelines-and-argo-cd-part-1/)
+* [Join the Call for Code Challenge](https://developer.ibm.com/callforcode/)
 
-1. [Building modern CI/CD workflows for serverless applications with Red Hat OpenShift Pipelines and Argo CD, Part 2](https://developers.redhat.com/blog/2020/10/14/building-modern-ci-cd-workflows-for-serverless-applications-with-red-hat-openshift-pipelines-and-argo-cd-part-2/)
+* [The Cloud Native Toolkit](http://cloudnativetoolkit.dev/)
 
-1. [Knative documentation](https://knative.dev/docs)
+* [OpenShift Labs](https://developer.ibm.com/openlabs/openshift)
 
-1. [Quarkus Getting Started](https://quarkus.io/get-started/)
+* [IBM Cloud Free Tier](https://ibm.biz/Bdffsi)
 
-1. [Red Hat Knative Tutorial](https://redhat-developer-demos.github.io/knative-tutorial/knative-tutorial/index.html)
+* [Deploy apps with Code Engine](https://www.youtube.com/watch?v=sd1zM57TAB4)
+
+* [Quarkus Getting Started](https://quarkus.io/get-started/)
+
+* [IBM for Cloud Native](https://www.ibm.com/cloud/cloud-native)
 

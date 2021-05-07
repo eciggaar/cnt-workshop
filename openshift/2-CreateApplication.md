@@ -1,4 +1,4 @@
-# Create your 1st application with the Toolkit
+# Create your first application with the Toolkit
 
 In the previous section we have installed all necessary client command-line tools and we have tested the connection to our assigned and pre-provisioned OpenShift cluster. In this part of the workshop we will create our first application using one of the Cloud Native Toolkit started kits. For this, we first need to make sure our connection to the cluster is still active. To check this, switch tab to your IBM Cloud Shell and type the following command:
 
@@ -57,4 +57,4 @@ For this, open a tab in your browser and make sure you are logged on to Github. 
 
 ---
 
-__Continue with the next part [Create the DevOps pipeline](3-Pipelines.md)__
+__Continue with the next part: [Create the DevOps pipeline](3-Pipelines.md)__

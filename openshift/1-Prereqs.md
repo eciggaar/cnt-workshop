@@ -4,7 +4,7 @@
 
 We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this workshop. You need an IBM Cloud Account to assign yourself one of these clusters:
 
-1. You can register at [https://cloud.ibm.com](https://ibm.biz/Bdqkfz).
+1. You can register at [https://cloud.ibm.com](https://ibm.biz/Bdffsi).
 
     We need your email address, a password, your name, and your country. 
     
@@ -12,7 +12,7 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
     
     Registration is free and without any obligations.
 
-1. Logon to the IBM Cloud Dashboard [https://cloud.ibm.com](https://cloud.ibm.com).
+1. Logon to the IBM Cloud Dashboard [https://cloud.ibm.com](https://ibm.biz/Bdffsi).
 
 ## 2. Accesss to Github and create a personal access token
 
@@ -20,11 +20,17 @@ For this workshop, you'll need a Github account. If you don't already have a Git
 
 1. [Logon](https://github.com/login) to your Github account in a separate browser tab
 
-1. Create a personal access token and use this as the password when prompted later in the workshop during pipeline creation and hooking your pipeline to your git repo. A personal access token can be created by clicking your profile on the right-top. Then click Settings -> Developer settings and select 'Personal access tokens'. 
+For your CI pipeline (Jenkins, Tekton, etc) to connect to and use your GitHub repo, a GitHub personal access token is needed with `public_repo` and `write:repo_hook` scopes. The Personal Access Token only needs to be generated once, because it is associated with the GitHub organization and can be used to access any of the organization’s repos.
 
-![Github Personal Access token](images/git-pa-token.png)
+1. Navigate to Developer Settings and generate a new token; name it something like “CI pipeline”
 
-Now create one for this workshop and carefully copy/paste the generated token as it will be shown only once.
+1. Select `public_repo` scope to enable git clone
+
+1. Select `write:repo_hook` scope so the pipeline can create a web hook
+
+   ![Github Personal Access token](images/git-pa-token.png)
+
+   The GitHub UI will never again let you see this token, so be sure to save the token in your password manager or somewhere safe that you can access later on.
 
 ## 2. Assign yourself a pre-provisoned cluster
 
@@ -110,7 +116,7 @@ We will work with OpenShift in the Web Console and in the command line, using di
 1. Set up the shell environment by running:
 
    ```bash
-   curl -sL shell.cloudnativetoolkit.dev | bash -
+   $ curl -sL shell.cloudnativetoolkit.dev | bash -
    ```
 
 2. If successful, the output should be similar to:
@@ -138,17 +144,17 @@ We will work with OpenShift in the Web Console and in the command line, using di
 3. Follow the instruction given at the end of the output to enable the changes in the current terminal session. That is, run
 
    ```bash
-   source ~/.zshrc
+   $ source ~/.zshrc
    ```
 
 4. You can check the shell was installed correctly by checking the oc sync version:
 
    ```bash
-   oc sync --version
+   $ oc sync --version
    ```
 
    This returns the `igc` version number.
 ---
 
-__Continue with the next part [Create an application](2-CreateApplication.md)__
+__Continue with the next part: [Create your 1st application with the Toolkit](2-CreateApplication.md)__
       

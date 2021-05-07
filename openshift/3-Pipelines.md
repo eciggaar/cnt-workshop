@@ -110,28 +110,27 @@ From the endpoints listed, select the URL for the repo that was just deployed an
 
 The build pipeline is configured to build the source code from the Git repository into a container image. This image is stored in the Image Registry. After that, the image is deployed into the same namespace/project within the development cluster where the pipeline ran and validated for its health. The steps below will walk through locating the installed application within the Web Console.
 
-1. Open the **OpenShift Web Console**, or in your Cloud Shell type
+1. Open the **OpenShift Web Console**.
 
     ```bash
-    oc console
+    $ oc console
     ```
-    and copy/paste the URL into a separate tab to open the console.
 
-2. Change to the **Developer** view
+2. Change to the **Developer** view.
 
-3. Click on **Topology** menu
+3. Click on **Topology** menu.
 
-4. Click on your application deployment in the topology view
+4. Click on your application deployment in the topology view.
 
-5. Click on the **Overview** tab
+5. Click on the **Overview** tab.
 
-6. Increase the number of running pods to 2 pods
+6. Increase the number of running pods to 2 pods.
 
-7. Click on the **Resources** tab to view the list of pods
+7. Click on the **Resources** tab to view the list of pods.
 
-8. Click on **View Logs** link to view the logs from each pod
+8. Click on **View Logs** link to view the logs from each pod.
 
-9. You can see the running state of your application
+9. You can see the running state of your application.
 
   ![Running application in OpenShift](images/running-app-in-oc.png)
 
@@ -143,4 +142,4 @@ Having reached this point, we recommend you repeat the process a few more times 
 
 ---
 
-__Continue with the next part [Continous Delivery with Argo CD](4-ContinousDelivery.md)__
+__Continue with the next part: [Continous Delivery with Argo CD](4-ContinousDelivery.md)__
