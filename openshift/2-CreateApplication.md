@@ -12,13 +12,15 @@ This should return the project that is currently active. If you receive an error
 
 One of the first steps in the process would be the creation of a development namespace / project. This project will contain the development version of the application and the DevOps pipelines. This is something that would typically happen once at the beginning of a project, when a development team is formed and assigned to the cluster.
 
-This step copies the common secrets and configMaps that contain the CI/CD configuration from the tools namespace into the development namespace / project. This enables the pipelines to reference the values easily for your project. To create your own development namespace, switch tab to a Cloud Shell again and type:
+When running the command below common secrets and configMaps, that contain the CI/CD configuration, are copied from the tools namespace into the development namespace / project. This enables the pipelines to reference the values easily for your project. 
 
-```bash
-$ oc sync ${DEV_NAMESPACE}
-```
+1. To create your own development namespace, switch tab to a Cloud Shell again and type:
 
-where `${DEV_NAMESPACE}` is the name you've chosen for your development namespace / project.
+    ```bash
+    $ oc sync ${DEV_NAMESPACE}
+    ```
+
+    where `${DEV_NAMESPACE}` is the name you've chosen for your development namespace / project.
 
 ## Open the Developer Dashboard
 
