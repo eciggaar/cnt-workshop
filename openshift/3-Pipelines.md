@@ -9,7 +9,7 @@
 
 1. If not already done so, open a separate tab to the Git repository that you've just generated from the Starter Kit template.
 
-2. Copy the Git repository's URL. For GitHub this is done by pressing the `Code` button and copying the URL provided in the `Clone` section.
+2. Copy the repository's URL. For GitHub this is done by pressing the `Code` button and copying the URL provided in the `Clone` section.
 
 3. Next, start the process to create a pipeline.
 

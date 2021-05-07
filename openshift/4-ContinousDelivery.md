@@ -45,24 +45,26 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
 
 1. Create a new repo from the [Argo CD Starter Kit](https://github.com/IBM/template-argocd-gitops/generate). If you see a 404 error when you click on the link, you need to sign in to github.
 
-2. Clone the project to your machine
+2. Copy the repository's URL. For GitHub this is done by pressing the `Code` button and copying the URL provided in the `Clone` section. Then, in your cloud shell, run:
 
     ```bash
     $ git clone ${GIT_URL_GITOPS}
     ```
 
-3. navigate into the directory
+3. Navigate into the directory.
 
     ```bash
     $ cd ${GIT_DIRECTORY}
     ```
 
-4. Create and push test branch
+4. Create and push test branch.
 
     ```bash
     $ git checkout -b test
     $ git push -u origin test
     ```
+
+    To be able to push the new `test` branch to the remote repo, you will be asked to provide your Git username and a **Password/Personal Access Token**.
 
 ### Hook the CI pipeline to the CD pipeline
 
