@@ -133,7 +133,7 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 
 3. Select the **Repositories** option.
 
-4. Click either the **Connect Repo using HTTPS** or **Connect Repo using SSH** button at the top and provide the information for the GitOps repo you just created. For `HTTPS` you can use the access token you used when you ran `igc gitops`.
+4. Click either the **Connect Repo using HTTPS** or **Connect Repo using SSH** button at the top and provide the information for the GitOps repo you just created.
 
 ### Create a project in Argo CD
 
@@ -161,23 +161,23 @@ In Argo CD terms, each deployable component is an application and applications a
 ### Add an application in Argo CD for each application component
 
 ---
-:warning: **Warning:** &nbsp; Before continuing to setup Argo CD, please verify that the CI Pipeline run created the directory for the application on the gitops git repository and the directory container the helm related files including requirements.yaml
+:warning: **Warning:** &nbsp; Before completing the set-up of Argo CD, please verify that the CI Pipeline run created the directory for the application on the GitOps repository and the directory containing the helm related files including `requirements.yaml`.
 
 ---
 
 The last step in the process is to define the application(s) within Argo CD that should be managed. This consists of connecting the config within the Git repo to the cluster and namespace.
 
-1. Log into Argo CD user interface
+1. Log into Argo CD user interface.
 
-2. Press `New Application` and provide the following values:
-    * `application name` - The name of the application. It is recommended to use the format of `{namespace}-{image name}`
-        * `project` - The Argo CD project with which the application should be included
-        * `sync-policy` - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended
-        * `repository url` - The Git url where the configuration is stored (restricted to git urls configured in the Argo Project)
-        * `revision` - The Git branch where the configuration for this instance is stored
-        * `path` - The path within the repository where the application config is located (should be the application name)
-        * `destination cluster` - The cluster url for the deployment
-        * `destination namespace` - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project)
+2. Press **Create Application** or **New App** and provide the following values:
+    * **Application Name** - The name of the application. It is recommended to use the format of `{namespace}-{image name}`.
+        * **Project** - The Argo CD project with which the application should be included.
+        * **Sync pPolicy** - The manner with which Argo CD will use to manage the deployed artifacts. `Automatic` is recommended.
+        * **Repository URL** - The GitOps URL where the configuration is stored (restricted to git URLs configured in the Argo Project).
+        * **Revision** - The Git branch where the configuration for this instance is stored. This would `test` in our case.
+        * **Path** - The path within the repository where the application config is located (should be the application name).
+        * **Cluster** - The destination cluster URL for the deployment.
+        * **Namespace** - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project).
 
 3. Finally, repeat that step for each application and each environment.
 
