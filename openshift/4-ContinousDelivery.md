@@ -176,3 +176,5 @@ The last step in the process is to define the application(s) within Argo CD that
         * `destination namespace` - The namespace where the application should be deployed (restricted to namespaces configured in the Argo Project)
 
 3. Finally, repeat that step for each application and each environment.
+
+Having reached this point, we recommend you repeat the process a few more times using different Code Patterns templates and explore the Developer view in OpenShift to get familiar with it.
