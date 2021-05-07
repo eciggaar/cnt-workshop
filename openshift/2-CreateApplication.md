@@ -30,7 +30,7 @@ The Developer Dashboard makes it easy for you to navigate to the tools, includin
 
 2. Next, navigate to the OpenShift web console and open the Application Launcher dropdown from the top-right (1) and select Developer Dashboard (2). 
 
-3. If prompted, click **Log in with OpenShift** and click **Allow selected permissions** to allow the service account developer-dashboard to obtain the necessary read-only access to your account.
+3. If prompted, click **Log in with OpenShift** and click **Allow selected permissions** to allow the service account `developer-dashboard` to obtain the necessary `read-only` access to your account.
 
     ![Developer Dashboard](images/developer-dashboard.png)
 
@@ -47,19 +47,18 @@ The Developer Dashboard makes it easy for you to navigate to the tools, includin
 
     ![Typescript Microservice](images/typescript-microservice.png)
 
-    Click on a Starter Kit **Tile** to create your app github repository from the template repository selected.  You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
+3. Click on a Starter Kit **Tile** to create your app github repository from the template repository selected.  You can also click on the Git Icon to browse the source template repository and click on the Template to create the template.
 
-3. Next, complete the [GitHub create repository from template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) process.
+4. Next, complete the [GitHub create repository from template](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template) process.
 
     * **Owner**: Select a valid GitHub organization that you are authorized to create repositories within.
     * **Repository name**: Enter a name for your repo. GitHub will help with showing a green tick if it is valid (See warning above).
     * **Description**: Describe your app. This is optional.
 
-4. Press **Create repository from template**.
+5. Click **Create repository from template**. The new repository will be created in your selected organization.
 
     ![Create Repository from Template](images/create-repo-from-template.png)
 
-    The new repository will be created in your selected organization.
 
 ---
 
