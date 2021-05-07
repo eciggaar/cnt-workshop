@@ -12,7 +12,7 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
     
     Registration is free and without any obligations.
 
-1. Logon to the IBM Cloud Dashboard [https://cloud.ibm.com](https://ibm.biz/Bdffsi).
+1. If you already happen to have an account, please go to the same [link](https://ibm.biz/Bdffsi) and click **Log in** on the top right of the page to continue.
 
 ## 2. Accesss to Github and create a personal access token
 
