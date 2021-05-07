@@ -131,9 +131,9 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 
     ![Argo CD config](images/argocd-config.png)
 
-3. Select the `Repositories` option.
+3. Select the **Repositories** option.
 
-4. Click either the `Connect Repo using HTTPS` or `Connect Repo using SSH` button at the top and provide the information for the GitOps repo you just created. For `HTTPS` you can use the access token you used when you ran `igc gitops`.
+4. Click either the **Connect Repo using HTTPS** or **Connect Repo using SSH** button at the top and provide the information for the GitOps repo you just created. For `HTTPS` you can use the access token you used when you ran `igc gitops`.
 
 ### Create a project in Argo CD
 
