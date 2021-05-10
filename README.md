@@ -1,13 +1,15 @@
 # Go Faster with the Cloud Native Developer Toolkit 
 
 ---
-:information_source: **Note:** The instructions in this workshop are taken from the official site https://cloudnativetoolkit.dev. They are a subset from what's available there, so that we can focus soley on the steps we want to accomplish in this workshop.
+:information_source: **Note:** The instructions in this workshop and the overview image below are taken from the official Cloud Native Toolkit site https://cloudnativetoolkit.dev. They are a subset from what's available there, so that we can focus soley on the steps we want to accomplish in this workshop. However, feel free to explore the site and to get more background information on the different tools involved.
 
 ---
 
 ## Learning objectives
 
 The Cloud-Native Toolkit is an open-source collection of assets that enable application development and that support teams to deliver business value quickly using a Red Hat OpenShift or IBM Cloud-managed Kubernetes. This workshop demonstrates how the toolkit can be used to support delivering business applications through the entire Software Development Life Cycle (SDLC). 
+
+![Environment Overview](images/cnt-overview.png)
 
 The toolkit has been built to support the principles of a robust SDLC while being flexible enough to fit into a wide range of development settings and toolchains. The key benefit is to make the end-to-end CI/CD development lifecycle consistent across each platform and make the out-of-the-box developer experience as simple as possible.
 
