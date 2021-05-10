@@ -40,7 +40,7 @@ In this step you will assign yourself a pre-provisioned cluster.
 
    Sign up for the Free Openshift Lab cluster here: 
    
-   URL: **https://osdevopslab.mybluemix.net/**  
+   URL: **https://os-teqnation-lab.mybluemix.net**  
    **key: oslab**
 
    ![granttool1](images/granttool1.png)
