@@ -9,7 +9,7 @@
 
 The Cloud-Native Toolkit is an open-source collection of assets that enable application development and that support teams to deliver business value quickly using a Red Hat OpenShift or IBM Cloud-managed Kubernetes. This workshop demonstrates how the toolkit can be used to support delivering business applications through the entire Software Development Life Cycle (SDLC). 
 
-![Environment Overview](images/cnt-overview.png)
+![Environment Overview](openshift/images/cnt-overview.png)
 
 The toolkit has been built to support the principles of a robust SDLC while being flexible enough to fit into a wide range of development settings and toolchains. The key benefit is to make the end-to-end CI/CD development lifecycle consistent across each platform and make the out-of-the-box developer experience as simple as possible.
 
