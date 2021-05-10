@@ -111,7 +111,7 @@ Argo CD will deploy the application into the "releases" namespace such as `${TES
 
     Here `${TEST_NAMESPACE}` reflects the name you've chosen for your testing namespace. As we are using the internal OpenShift Image Registry for this workshop, we need to give permission to the services accounts in the "release" namespaces (i.e. your `${TEST_NAMESPACE}` namespace) to be able to pull images from the "development" namespaces (i.e. your `${DEV_NAMESPACE}` namespace). 
     
-2. For this, grant access to service accounts in the new `${TEST_NAMESPACE}` to pull the container image from the`${DEV_NAMESPACE}` namespace. 
+2. For this, grant access to service accounts in the new `${TEST_NAMESPACE}` to pull the container images from the`${DEV_NAMESPACE}` namespace. 
 
     ```bash
     $ oc policy add-role-to-group system:image-puller system:serviceaccounts:{TEST_NAMESPACE} -n {DEV_NAMESPACE}
@@ -155,7 +155,7 @@ In Argo CD terms, each deployable component is an application and applications a
     * Name - Provide the name for the project
         * **Description** - A brief description of the project
         * **Source** - Press Add source and pick the Git repository from the list that was added previously
-        * **Destinations** - Add `https://kubernetes.default.svc` for the cluster url and ${TEST_NAMESPACE} for the namespace
+        * **Destinations** - Add `https://kubernetes.default.svc` for the cluster url and `${TEST_NAMESPACE}` for the namespace
         * Press **Create**.
 
 ### Add an application in Argo CD for each application component
