@@ -28,7 +28,7 @@ The Developer Dashboard makes it easy for you to navigate to the tools, includin
 
 1. For this, open a tab in your browser and make sure you are logged on to Github. 
 
-2. Next, navigate to the OpenShift web console and open the Application Launcher dropdown from the top-right (1) and select Developer Dashboard (2). 
+2. Next, navigate to the OpenShift web console and open the Application Launcher dropdown from the top-right and select Developer Dashboard. 
 
 3. If prompted, click **Log in with OpenShift** and click **Allow selected permissions** to allow the service account `developer-dashboard` to obtain the necessary `read-only` access to your account.
 
