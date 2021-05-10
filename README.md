@@ -28,7 +28,7 @@ Click the link below to get started & have fun!! Happy coding :smiley:
 
 ---
 
-**[Let's get started with the hands-on part!!](openshift/1-Prereqs.md)**
+**[Let's get hands-on!!](openshift/1-Prereqs.md)**
 
 ---
 
