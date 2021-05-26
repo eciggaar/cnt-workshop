@@ -4,7 +4,7 @@
 
 We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this workshop. You need an IBM Cloud Account to assign yourself one of these clusters:
 
-1. You can register at [https://cloud.ibm.com](https://ibm.biz/Bdffsi).
+1. You can register at [https://cloud.ibm.com](https://ibm.biz/BdffsY).
 
     We need your email address, a password, your name, and your country. 
     
@@ -12,7 +12,7 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
     
     Registration is free and without any obligations.
 
-1. If you already have an IBM Cloud account, please go to the same [link](https://ibm.biz/Bdffsi) and click **Log in** on the top right of the page to continue.
+1. If you already have an IBM Cloud account, please go to the same [link](https://ibm.biz/BdffsY) and click **Log in** on the top right of the page to continue.
 
 ## 2. Accesss to Github and create a personal access token
 
@@ -40,7 +40,7 @@ In this step you will assign yourself a pre-provisioned cluster.
 
    Sign up for the Free Openshift Lab cluster here: 
    
-   URL: **https://os-teqnation-lab.mybluemix.net**  
+   URL: **https://os-fontys-lab.mybluemix.net**  
    **key: oslab**
 
    ![granttool1](images/granttool1.png)
