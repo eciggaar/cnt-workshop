@@ -3,7 +3,7 @@
 In the previous section we have installed all the necessary CLI tools and we have tested the connection to our assigned and pre-provisioned cluster. In this part of the workshop we will create our first application using one of the Cloud Native Toolkit started kits. For this, first make sure the connection to the cluster is still active. To check this, switch tab to your Cloud Shell and type the following command:
 
 ```bash
-$ oc project
+oc project
 ```
 
 This should return the project that is currently active. If you receive an error message telling that you are not logged on, complete the [Copy Login Command](1-Prereqs.md#the-ibm-cloud-shell) steps from the previous section.
@@ -17,7 +17,7 @@ The command below copies common secrets and configMaps -- that contain the CI/CD
 1. To create your own development namespace, switch tab to a Cloud Shell again and type:
 
     ```bash
-    $ oc sync ${DEV_NAMESPACE}
+    oc sync ${DEV_NAMESPACE}
     ```
 
     where `${DEV_NAMESPACE}` is the name you've chosen for your development namespace / project.

@@ -14,13 +14,13 @@
 3. Next, start the process to create a pipeline.
 
     ```bash
-    $ oc pipeline ${GIT_URL}
+    oc pipeline ${GIT_URL}
     ```
 
     For example:
 
     ```bash
-    $ oc pipeline https://github.com/eciggaar/cnt-typescript
+    oc pipeline https://github.com/eciggaar/cnt-typescript
     ```
 
 4. For the deployment of your first app with OpenShift select **Tekton** as the CI engine.
@@ -101,7 +101,7 @@ Once the pipeline has completed successfully, the app will be deployed into the 
 1. Open or switch tab to your Cloud Shell and use the command below to retrieve the application ingress endpoint.
 
     ```bash
-    $ oc endpoints
+    oc endpoints
     ```
 
 2. From the endpoints listed, select the URL for the repo that was just deployed and press Enter to open that URL in a web browser. Validate the application is working as expected.
@@ -113,7 +113,7 @@ The build pipeline is configured to build the source code from the Git repositor
 1. Open the **OpenShift Web Console**.
 
     ```bash
-    $ oc console
+    oc console
     ```
 
 2. Change to the **Developer** view.

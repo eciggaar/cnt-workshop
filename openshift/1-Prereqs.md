@@ -4,7 +4,7 @@
 
 We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this workshop. You need an IBM Cloud Account to assign yourself one of these clusters:
 
-1. You can register at [https://cloud.ibm.com](https://ibm.biz/BdffsY).
+1. You can register at [https://cloud.ibm.com](https://ibm.biz/Bdfyxv).
 
     We need your email address, a password, your name, and your country. 
     
@@ -12,7 +12,7 @@ We will use pre-provisioned Red Hat OpenShift clusters on the IBM Cloud for this
     
     Registration is free and without any obligations.
 
-1. If you already have an IBM Cloud account, please go to the same [link](https://ibm.biz/BdffsY) and click **Log in** on the top right of the page to continue.
+1. If you already have an IBM Cloud account, please go to the same [link](https://ibm.biz/Bdfyxv) and click **Log in** on the top right of the page to continue.
 
 ## 2. Accesss to Github and create a personal access token
 
@@ -105,7 +105,7 @@ We will work with OpenShift in the Web Console and in the command line, using di
    Test access to OpenShift:
    
    ```bash
-   $ oc projects
+   oc projects
    ```
    
    This should display a whole list of projects/namespaces that you could access on OpenShift.  
@@ -116,7 +116,7 @@ We will work with OpenShift in the Web Console and in the command line, using di
 1. Set up the shell environment by running:
 
    ```bash
-   $ curl -sL shell.cloudnativetoolkit.dev | bash -
+   curl -sL shell.cloudnativetoolkit.dev | bash -
    ```
 
 2. If successful, the output should be similar to:
@@ -144,13 +144,13 @@ We will work with OpenShift in the Web Console and in the command line, using di
 3. Follow the instruction given at the end of the output to enable the changes in the current terminal session. That is, run
 
    ```bash
-   $ source ~/.bashrc
+   source ~/.bashrc
    ```
 
 4. You can check the shell was installed correctly by checking the oc sync version:
 
    ```bash
-   $ oc sync --version
+   oc sync --version
    ```
 
    This returns the `igc` version number.

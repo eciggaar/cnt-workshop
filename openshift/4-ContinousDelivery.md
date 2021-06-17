@@ -48,20 +48,20 @@ Argo CD uses a Git repo to express the desired state of the Kubernetes environme
 2. Copy the repository's URL. For GitHub this is done by pressing the `Code` button and copying the URL provided in the `Clone` section. Then, in your cloud shell, run:
 
     ```bash
-    $ git clone ${GIT_URL_GITOPS}
+    git clone ${GIT_URL_GITOPS}
     ```
 
 3. Navigate into the directory.
 
     ```bash
-    $ cd ${GIT_DIRECTORY}
+    cd ${GIT_DIRECTORY}
     ```
 
 4. Create and push test branch.
 
     ```bash
-    $ git checkout -b test
-    $ git push -u origin test
+    git checkout -b test
+    git push -u origin test
     ```
 
     To be able to push the new `test` branch to the remote repo, you will be asked to provide your Git username and a **Password/Personal Access Token**.
@@ -78,13 +78,13 @@ Fortunately the IGC CLI provides a `gitops` command to simplify this step. Infor
 1. Make sure to switch context to the project/namespace CI namespace
 
     ```bash
-    $ oc project ${DEV_NAMESPACE}
+    oc project ${DEV_NAMESPACE}
     ```
 
 2. Run the `gitops` command to create the config map and secret in the CI namespace
 
     ```bash
-    $ igc gitops
+    igc gitops
     ```
 
     ---
@@ -106,7 +106,7 @@ Argo CD will deploy the application into the "releases" namespace such as `${TES
 1. Creat a release namespace where Argo CD will deploy the application:
 
     ```bash
-    $ oc new-project ${TEST_NAMESPACE}
+    oc new-project ${TEST_NAMESPACE}
     ```
 
     Here `${TEST_NAMESPACE}` reflects the name you've chosen for your testing namespace. As we are using the internal OpenShift Image Registry for this workshop, we need to give permission to the services accounts in the "release" namespaces (i.e. your `${TEST_NAMESPACE}` namespace) to be able to pull images from the "development" namespaces (i.e. your `${DEV_NAMESPACE}` namespace). 
@@ -114,7 +114,7 @@ Argo CD will deploy the application into the "releases" namespace such as `${TES
 2. For this, grant access to service accounts in the new `${TEST_NAMESPACE}` to pull the container images from the`${DEV_NAMESPACE}` namespace. 
 
     ```bash
-    $ oc policy add-role-to-group system:image-puller system:serviceaccounts:{TEST_NAMESPACE} -n {DEV_NAMESPACE}
+    oc policy add-role-to-group system:image-puller system:serviceaccounts:{TEST_NAMESPACE} -n {DEV_NAMESPACE}
     ```
 
 ### Register the GitOps repo in Argo CD
