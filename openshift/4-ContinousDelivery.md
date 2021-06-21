@@ -123,7 +123,13 @@ Now that the repository has been created, we need to tell Argo CD where it is.
 
 1. For this, open the **Developer Dashboard** and click the Argo CD link to open Argo CD.
 
-1. Log into Argo CD by clicking **Login via OpenShift**. 
+1. Log into Argo CD by providing `admin` as userid. The password is stored in a secret in the `openshift-gitops` namespace. Execute the following command:
+
+    ```bash
+    oc get secret argocd-cluster-cluster -n openshift-gitops -o json | jq -r '.data."admin.password"' |base64 --decode
+    ```
+
+    and copy/paste the value in the password field. 
 
 1. Next, click **Allow selected permissions** to give the `argocd-dex-server` service account `read-only` access to your account.
 
