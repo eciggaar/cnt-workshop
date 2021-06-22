@@ -43,7 +43,7 @@ You can find detailed information and learn more about the Cloud Native Toolkit,
 
 * [OpenShift Labs](https://developer.ibm.com/openlabs/openshift)
 
-* [IBM Cloud Free Tier](https://ibm.biz/Bdffsi)
+* [IBM Cloud Free Tier](https://ibm.biz/Bdfyxv)
 
 * [Deploy apps with Code Engine](https://www.youtube.com/watch?v=sd1zM57TAB4)
 
